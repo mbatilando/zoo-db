@@ -7,12 +7,10 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'Zoo DB Dev'
+      name: 'info257test'
     },
-    port: port,
-    db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
-    username: 'kupehbzbjzufdf',
-    password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
+    port: 3000,
+    db: 'postgres://localhost/Mari'
     
   },
 
@@ -29,15 +27,13 @@ var config = {
   production: {
     root: rootPath,
     app: {
-      name: 'info257test'
+      name: 'Zoo DB Dev'
     },
-    port: 3000,
+    port: port,
     db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
     username: 'kupehbzbjzufdf',
     password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
   }
 };
-console.log('****************************************************');
-console.log(config[env]);
 
 module.exports = config[env];
