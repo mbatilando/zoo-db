@@ -1,6 +1,7 @@
 var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
-    env = process.env.NODE_ENV || 'development';
+    env = process.env.NODE_ENV || 'development',
+    port = process.env.PORT || 3000;
 
 var config = {
   development: {
@@ -8,7 +9,7 @@ var config = {
     app: {
       name: 'Zoo DB Dev'
     },
-    port: 5432,
+    port: port,
     db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
     username: 'kupehbzbjzufdf',
     password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
