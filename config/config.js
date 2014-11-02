@@ -34,7 +34,7 @@ var config = {
     password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
   }
 };
-
+console.log('****************************************************');
 console.log(config[env]);
 
 module.exports = config[env];
