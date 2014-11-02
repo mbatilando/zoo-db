@@ -7,27 +7,25 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'info257test'
+      name: 'Zoo DB Dev'
     },
     port: 3000,
     db: 'postgres://localhost/Mari'
-    
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'info257test'
+      name: 'Zoo DB Test'
     },
     port: 3000,
     db: 'postgres://localhost/info257test-test'
-    
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'Zoo DB Dev'
+      name: 'Zoo DB Prod'
     },
     port: port,
     db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
