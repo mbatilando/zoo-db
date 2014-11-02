@@ -6,9 +6,9 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'info257test'
+      name: 'Zoo DB Dev'
     },
-    port: 3000,
+    port: 5432,
     db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
     username: 'kupehbzbjzufdf',
     password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
