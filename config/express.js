@@ -7,12 +7,22 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
+var sass = require('node-sass-middleware');
 
 module.exports = function(app, config) {
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'jade');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
+
+  app.use(
+   sass({
+       src: config.root + '/sass',
+       dest: config.root + '/public/css',
+       debug: true
+   })
+  );
+
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
@@ -27,6 +37,8 @@ module.exports = function(app, config) {
   controllers.forEach(function (controller) {
     require(controller)(app);
   });
+
+
 
   app.use(function (req, res, next) {
     var err = new Error('Not Found');

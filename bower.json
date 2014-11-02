@@ -4,6 +4,19 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "components"
-  ]
+    "components",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "flatui": "*"
+  },
+  "homepage": "https://github.com/mbatilando/zoo-db",
+  "authors": [
+    "Mari Batilando <mari.batilando@gmail.com>"
+  ],
+  "description": "Info 257",
+  "license": "MIT"
 }

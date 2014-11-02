@@ -11,6 +11,22 @@ module.exports = function (grunt) {
   var reloadPort = 35729, files;
 
   grunt.initConfig({
+    sass: {
+      dist: {
+        options: {
+          style: 'expanded'
+        },
+        files: {
+          'public/css/style.css': 'sass/style.scss'
+        }
+        // files: [{
+        //   expand: true,
+        //   src: ['sass/*.scss'],
+        //   dest: 'public/css',
+        //   ext: '.css'
+        // }]
+      }
+    },
     pkg: grunt.file.readJSON('package.json'),
     develop: {
       server: {
@@ -58,5 +74,6 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('default', ['develop', 'watch']);
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.registerTask('default', ['develop', 'watch', 'sass']);
 };
