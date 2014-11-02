@@ -9,7 +9,9 @@ var config = {
       name: 'info257test'
     },
     port: 3000,
-    db: 'postgres://localhost/Mari'
+    db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
+    username: 'kupehbzbjzufdf',
+    password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
     
   },
 
