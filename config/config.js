@@ -6,31 +6,32 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'Zoo DB Dev'
+      name: 'info257test'
     },
     port: 3000,
-    db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc'
+    db: 'postgres://localhost/Mari'
     
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'Zoo DB Test'
+      name: 'info257test'
     },
     port: 3000,
-    db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc'
+    db: 'postgres://localhost/info257test-test'
     
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'Zoo DB Prod'
+      name: 'info257test'
     },
     port: 3000,
-    db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc'
-    
+    db: 'postgres://kupehbzbjzufdf:ck_UuGKW6aGE5CRiYcyLeAj8wM@ec2-54-235-250-41.compute-1.amazonaws.com:5432/d2lt4df5854guc',
+    username: 'kupehbzbjzufdf',
+    password: 'ck_UuGKW6aGE5CRiYcyLeAj8wM'
   }
 };
 
