@@ -39,3 +39,11 @@ router.get('/add/animal', function (req, res, next) {
 router.get('/add/exhibit', function (req, res, next) {
   res.render('exhibit/add-exhibit', {});
 });
+
+router.get('/add/zoo-membership', function (req, res, next) {
+  res.render('zoo-membership/add-zoo-membership', {});
+});
+
+router.get('/add/species', function (req, res, next) {
+  res.render('species/add-species', {});
+});

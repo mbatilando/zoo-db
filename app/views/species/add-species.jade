@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	form(class="custom-form species-form pure-form pure-form-stacked")
+		h1 Species Form
+		fieldset
+			label(for="scientific-name") Scientific Name
+			input(name="scientific-name", type="text", placeholder="Mellivora Capensis")
+			label(for="common-name") Common Name
+			input(name="common-name", type="text", placeholder="Badger")
+			label(for="description") Description
+			textarea(name="description" placeholder="A species of mustelid...")
+		button(type="submit" class="pure-button pure-button-primary") Create Species
