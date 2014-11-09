@@ -1,9 +1,32 @@
 extends layout
 
 block content
-	form(class="zoo-form customer-form")
-		label(for="first-name") First Name
-		input(name="first-name", type="text", placeholder="John")
-		label(for="last-name") Last Name
-		input(name="last-name", type="text", placeholder="Doe")
-		label(for="phone") Phone
+	div(class="pure-menu pure-menu-open")
+		a(class="pure-menu-heading") Zoo DB
+		ul
+			li(class="pure-menu-heading") Add
+			li
+				a(href="/add/zoo") Zoo
+			li
+				a(href="/add/animal") Animal
+			li
+				a(href="/add/Customer") Customer
+			li
+				a(href="/add/exhibit") Exhibit
+			li
+				a(href="/add/show") Show
+			li
+				a(href="/add/zookeeper") Zookeeper
+			li(class="pure-menu-heading") View
+			li
+				a(href="/view/zoo") Zoo
+			li
+				a(href="/view/animal") Animal
+			li
+				a(href="/view/Customer") Customer
+			li
+				a(href="/view/exhibit") Exhibit
+			li
+				a(href="/view/show") Show
+			li
+				a(href="/view/zookeeper") Zookeeper
