@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+	form(class="custom-form zoo-form pure-form pure-form-stacked")
+		h1 Zoo Form
+		fieldset
+			label(for="name") Zoo Name
+			input(name="name", type="text", placeholder="My Awesome Zoo")
+			label(for="opening-time") Opening Time
+			select(name="opening-time")
+				option 12:00 AM
+				option 1:00 AM
+				option 2:00 AM
+			label(for="closing-time") Closing Time
+			select(name="closing-time")
+				option 12:00 AM
+				option 1:00 AM
+				option 2:00 AM
+			label(for="street") Street
+			input(name="street", type="text", placeholder="123 Folsom St.")
+			label(for="city") City
+			input(name="city", type="text", placeholder="San Francisco")
+			label(for="state") State
+			input(name="state", type="text", placeholder="CA")
+			label(for="zip") Zip
+			input(name="zip", type="number" placeholder="95758")
+			label(for="country") Country
+			input(name="country" type="text" placeholder="USA")
+			label(for="phone") Phone
+			input(name="phone" type="text" placeholder="(123) 456-7890")
+		button(type="submit" class="pure-button pure-button-primary") Create Zoo

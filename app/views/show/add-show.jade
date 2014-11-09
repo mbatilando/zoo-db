@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+	form(class="custom-form show-form pure-form pure-form-stacked")
+		h1 Show Form
+		fieldset
+			label(for="name") Name
+			input(name="name", type="text", placeholder="My Awesome Show")
+			label(for="time") Time
+			select(name="time")
+				option 12:00 AM
+				option 1:00 AM
+				option 2:00 AM
+			label(for="exhibit") Exhibit
+			select(name="exhibit")
+				option Cool Exhibit
+			button(type="submit" class="pure-button pure-button-primary") Create Show

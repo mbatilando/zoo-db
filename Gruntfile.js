@@ -17,7 +17,7 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          'public/css/style.css': 'sass/style.scss'
+          'public/css/form.css': 'sass/form.scss'
         }
         // files: [{
         //   expand: true,

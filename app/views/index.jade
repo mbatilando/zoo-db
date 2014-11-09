@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	form(class="zoo-form customer-form")
+		label(for="first-name") First Name
+		input(name="first-name", type="text", placeholder="John")
+		label(for="last-name") Last Name
+		input(name="last-name", type="text", placeholder="Doe")
+		label(for="phone") Phone

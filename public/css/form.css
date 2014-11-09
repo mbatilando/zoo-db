@@ -1,0 +1,12 @@
+.custom-form {
+  width: 300px;
+  margin: 0 auto;
+}
+.custom-form input[type="text"] {
+  width: 300px;
+}
+.custom-form h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+	form(class="custom-form animal-form pure-form pure-form-stacked")
+		h1 Animal Form
+		fieldset
+			label(for="given-name") Given Name
+			input(name="given-name", type="text", placeholder="Mr. Whiskers")
+			label(for="weight") Weight (lbs.)
+			input(name="weight", type="number", placeholder="135")
+			label(for="picture") Picture URL
+			input(name="picture", type="text", placeholder="http://coolpicture.com/123abc")
+			label(for="birth-date") Birth Date
+			input(name="birth-date", type="text", placeholder="November 10, 1992")
+			label(for="gender") Gender
+			select(name="gender")
+				option Male
+				option Female
+			label(for="species") Species
+			select(name="species")
+				option Obuko Sabialis
+			label(for="exhibit") Exhibit
+			select(name="exhibit")
+				option Cool Exhibit
+		button(type="submit" class="pure-button pure-button-primary") Create Animal

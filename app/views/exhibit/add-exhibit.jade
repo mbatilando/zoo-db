@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	form(class="custom-form exhibit-form pure-form pure-form-stacked")
+		h1 Exhibit Form
+		fieldset
+			label(for="name") Name
+			input(name="name", type="text", placeholder="Awesome Exhibit")
+			fieldset(name="exhibits")
+				<legend>Exhibits</legend>
+				label(for="Cool Exhibit" class="pure-checkbox") Cool Exhibit 
+					input(name="Cool Exhibit" type="checkbox")
+		button(type="submit" class="pure-button pure-button-primary") Create Exhibit
