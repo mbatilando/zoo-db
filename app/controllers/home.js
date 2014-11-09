@@ -8,12 +8,12 @@ module.exports = function (app) {
 
 router.get('/', function (req, res, next) {
 
-  db.Article.findAll().success(function (articles) {
-    res.render('index', {
-      title: 'Generator-Express MVC',
-      articles: articles
-    });
-  });
+  // db.Article.findAll().success(function (articles) {
+  //   res.render('index', {
+  //     title: 'Generator-Express MVC',
+  //     articles: articles
+  //   });
+  // });
 });
 
 router.get('/add/customer', function (req, res, next) {

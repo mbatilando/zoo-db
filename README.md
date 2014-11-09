@@ -14,3 +14,8 @@ Compiling SCSS Files
 - Pull all SCSS files in sass directory
 - 'grunt sass' on root project directory
 - Compiled CSS files should now be in public/css
+
+PSQL
+=====================
+INSERT INTO "Species" ("scientific_name", "common_name", "description", "createdAt", "updatedAt")
+	VALUES ('Lepomis macrochirus', 'Bluegill Sunfish', 'A fish found in the Pacific Ocean', (NOW()), (NOW()));
