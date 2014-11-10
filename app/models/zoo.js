@@ -10,7 +10,15 @@ module.exports = function (sequelize, DataTypes) {
     country: DataTypes.STRING,
     opening_time: DataTypes.DATE,
     closing_time: DataTypes.DATE
-  });
+  }, {
+      classMethods: {
+        associate: function(models) {
+          Zoo.hasMany(models.ZooMembership);
+          Zoo.hasMany(models.Zookeeper);
+        }
+      }
+    }
+  );
 
   return Zoo;
 };

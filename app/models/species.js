@@ -4,7 +4,16 @@ module.exports = function (sequelize, DataTypes) {
     scientific_name: DataTypes.STRING,
     common_name: DataTypes.STRING,
     description: DataTypes.STRING
-  });
+  }, {
+      classMethods: {
+        associate: function(models) {
+          Species.hasMany(models.Animal, {
+          	foreignKey: 'SpeciesId'
+          });
+        }
+      }
+    }
+  );
 
   return Species;
 };

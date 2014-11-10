@@ -10,7 +10,7 @@ var config = {
       name: 'Zoo DB Dev'
     },
     port: 3000,
-    db: 'postgres://localhost/Mari'
+    db: 'postgres://localhost/zoo_db'
   },
 
   test: {

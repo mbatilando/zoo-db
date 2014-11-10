@@ -4,13 +4,15 @@ module.exports = function (sequelize, DataTypes) {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     phone: DataTypes.STRING,
-    work_days: DataTypes.ENUM('M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su'),
-    zoo: {
-      type: DataTypes.INTEGER,
-      references: 'Zoo',
-      referencesKey: 'id'
+    work_days: DataTypes.ENUM('M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su')
+  }, {
+      classMethods: {
+        associate: function(models) {
+          Zookeeper.hasMany(models.Exhibit);
+        }
+      }
     }
-  });
+  );
 
   return Zookeeper;
 };

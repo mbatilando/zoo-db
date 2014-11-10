@@ -14,6 +14,7 @@ router.get('/', function (req, res, next) {
   //     articles: articles
   //   });
   // });
+  res.render('index', {});
 });
 
 router.get('/add/customer', function (req, res, next) {
