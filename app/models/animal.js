@@ -7,9 +7,9 @@ module.exports = function (sequelize, DataTypes) {
     birth_date: DataTypes.DATE,
     gender: DataTypes.ENUM('male', 'female'),
     species: {
-    	type: DataTypes.INTEGER,
-    	references: 'Species',
-    	referencesKey: 'id'
+      type: DataTypes.INTEGER,
+      references: 'Species',
+      referencesKey: 'id'
     }
   });
 

@@ -4,12 +4,11 @@ module.exports = function (sequelize, DataTypes) {
     name: DataTypes.STRING,
     time: DataTypes.DATE,
     exhibit: {
-        type: DataTypes.INTEGER,
-        references: 'Exhibit',
-        referencesKey: 'id'
+      type: DataTypes.INTEGER,
+      references: 'Exhibit',
+      referencesKey: 'id'
     }
   });
 
   return Show;
 };
-
