@@ -6,8 +6,9 @@ block content
 		fieldset
 			label(for="name") Name
 			input(name="name", type="text", placeholder="Awesome Exhibit")
-			fieldset(name="exhibits")
-				<legend>Exhibits</legend>
-				label(for="Zookeeper Crystal" class="pure-checkbox") Zookeeper Crystal 
-					input(name="Zookeeper Crystal" type="checkbox")
+			label(for="zookeeper") Zookeeper
+			select(name="zookeeper")
+				option Crystal
+				option Ashleigh
+				option Mari
 		button(type="submit" class="pure-button pure-button-primary") Create Exhibit
