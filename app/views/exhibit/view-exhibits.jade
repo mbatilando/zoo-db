@@ -5,10 +5,11 @@ block content
 		thead
 			tr
 				th id
-				th Name
+				th name
 				th ZookeeperId
 		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td The Sahara
-				td 3
+			each exhibit, index in Exhibits
+				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+					td #{exhibit.id}
+					td #{exhibit.name}
+					td #{exhibit.ZookeeperId}

@@ -8,7 +8,8 @@ block content
 				th Zoo CustomerId
 				th ZooId
 		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td 4
-				td 5
+			each zooMembership, index in ZooMemberships
+				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+					td #{zooMembership.id}
+					td #{zooMembership['Zoo CustomerId']}
+					td #{zooMembership.ZooId}

@@ -9,8 +9,9 @@ block content
 				th common_name
 				th description
 		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td Antilocapra americana
-				td antelope
-				td neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in
+			each specie, index in Species
+				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+					td #{specie.id}
+					td #{specie.scientific_name}
+					td #{specie.common_name}
+					td #{specie.description}

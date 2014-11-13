@@ -9,8 +9,9 @@ block content
 				th Last Name
 				th Phone
 		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td Mari
-				td Batilando
-				td (123) 456-7890
+			each customer, index in ZooCustomers
+				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+					td #{customer.id}
+					td #{customer.first_name}
+					td #{customer.last_name}
+					td #{customer.phone}

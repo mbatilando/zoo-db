@@ -11,10 +11,11 @@ block content
 				th work_days
 				th ZooId
 		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td Jacqueline
-				td Cunningham
-				td 4-(631)052-7586
-				td Sa
-				td 3
+			each zooKeeper, index in Zookeepers
+				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+					td #{zooKeeper.id}
+					td #{zooKeeper.first_name}
+					td #{zooKeeper.last_name}
+					td #{zooKeeper.phone}
+					td #{zooKeeper.work_days}
+					td #{zooKeeper.ZooId}
