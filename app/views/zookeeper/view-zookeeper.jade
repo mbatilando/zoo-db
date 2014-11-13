@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+	form(class="custom-form zookeeper-form pure-form pure-form-stacked")
+		h1 Zookeeper Form
+		fieldset
+			label(for="first-name") First Name
+			input(name="first-name", type="text", placeholder="John" value="#{zookeeper.first_name}")
+			label(for="last-name") Last Name
+			input(name="last-name", type="text", placeholder="Doe" value="#{zookeeper.last_name}")
+			label(for="phone") Phone
+			input(name="phone" type="text" placeholder="(510) 432-8970" value="#{zookeeper.phone}")
+			label(for="zoo") Zoo ID
+			input(name="zoo" type="text" value="#{zookeeper.ZooId}")
+			fieldset(name="work")
+				<legend>Work Days</legend>
+				label(for="monday pure-checkbox") Monday 
+					input(name="monday" type="checkbox")
+				label(for="tuesday pure-checkbox") Tuesday 
+					input(name="tuesday pure-checkbox" type="checkbox")
+				label(for="wednesday pure-checkbox") Wednesday 
+					input(name="wednesday pure-checkbox" type="checkbox")
+		button(type="submit" class="pure-button pure-button-primary") Save

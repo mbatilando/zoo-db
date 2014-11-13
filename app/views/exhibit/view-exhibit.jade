@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	form(class="custom-form exhibit-form pure-form pure-form-stacked")
+		h1 Exhibit Form
+		fieldset
+			label(for="name") Name
+			input(name="name", type="text", placeholder="Awesome Exhibit" value="#{exhibit.name}")
+			label(for="zookeeperId") ZookeeperId
+			input(name="zookeeperId", type="number", placeholder="1" value="#{exhibit.ZookeeperId}")
+		button(type="submit" class="pure-button pure-button-primary") Save

@@ -14,12 +14,6 @@ block content
 			input(name="birth-date", type="text", placeholder="November 10, 1992")
 			label(for="gender") Gender
 			select(name="gender")
-				option Male
-				option Female
-			label(for="species") Species
-			select(name="species")
-				option Obuko Sabialis
-			label(for="exhibit") Exhibit
-			select(name="exhibit")
-				option Cool Exhibit
+				option(value="male") Male
+				option(value="female") Female
 		button(type="submit" class="pure-button pure-button-primary") Create Animal

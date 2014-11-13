@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+	form(class="custom-form customer-form pure-form pure-form-stacked")
+		h1 Customer Membership Form
+		fieldset
+			label(for="first-name") First Name
+			input(name="first-name", type="text", placeholder="John", value="#{customer.first_name}")
+			label(for="last-name") Last Name
+			input(name="last-name", type="text", placeholder="Doe" value="#{customer.last_name}")
+			label(for="phone") Phone
+			input(name="phone" type="text" placeholder="(510) 432-8970" value="#{customer.phone}")
+		button(type="submit" class="pure-button pure-button-primary") Save
