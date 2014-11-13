@@ -10,6 +10,9 @@ block content
 		tbody
 			each exhibit, index in Exhibits
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td #{exhibit.id}
-					td #{exhibit.name}
-					td #{exhibit.ZookeeperId}
+					td
+						a(href="/view/exhibit/#{exhibit.id}") #{exhibit.id}
+					td
+						a(href="/view/exhibit/#{exhibit.id}") #{exhibit.name}
+					td
+						a(href="/view/exhibit/#{exhibit.id}") #{exhibit.ZookeeperId}

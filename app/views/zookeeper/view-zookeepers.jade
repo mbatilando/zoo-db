@@ -13,9 +13,15 @@ block content
 		tbody
 			each zooKeeper, index in Zookeepers
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td #{zooKeeper.id}
-					td #{zooKeeper.first_name}
-					td #{zooKeeper.last_name}
-					td #{zooKeeper.phone}
-					td #{zooKeeper.work_days}
-					td #{zooKeeper.ZooId}
+					td
+						a(href="/view/zookeeper/#{zooKeeper.id}") #{zooKeeper.id}
+					td
+						a(href="/view/zookeeper/#{zooKeeper.id}") #{zooKeeper.first_name}
+					td
+						a(href="/view/zookeeper/#{zooKeeper.id}") #{zooKeeper.last_name}
+					td
+						a(href="/view/zookeeper/#{zooKeeper.id}") #{zooKeeper.phone}
+					td
+						a(href="/view/zookeeper/#{zooKeeper.id}") #{zooKeeper.work_days}
+					td
+						a(href="/view/zookeeper/#{zooKeeper.id}") #{zooKeeper.ZooId}

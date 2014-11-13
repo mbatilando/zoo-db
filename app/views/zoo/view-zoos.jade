@@ -17,13 +17,23 @@ block content
 		tbody
 			each zoo, index in Zoos
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td #{zoo.id}
-					td #{zoo.name}
-					td #{zoo.phone}
-					td #{zoo.street}
-					td #{zoo.city}
-					td #{zoo.state}
-					td #{zoo.zip}
-					td #{zoo.country}
-					td #{zoo.opening_time}
-					td #{zoo.closing_time}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.id}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.name}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.phone}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.street}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.city}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.state}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.zip}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.country}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.opening_time}
+					td
+						a(href="/view/zoo/#{zoo.id}") #{zoo.closing_time}

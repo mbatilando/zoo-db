@@ -11,7 +11,11 @@ block content
 		tbody
 			each customer, index in ZooCustomers
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td #{customer.id}
-					td #{customer.first_name}
-					td #{customer.last_name}
-					td #{customer.phone}
+					td
+						a(href="/view/exhibit/#{customer.id}") #{customer.id}
+					td
+						a(href="/view/exhibit/#{customer.id}") #{customer.first_name}
+					td
+						a(href="/view/exhibit/#{customer.id}") #{customer.last_name}
+					td
+						a(href="/view/exhibit/#{customer.id}") #{customer.phone}

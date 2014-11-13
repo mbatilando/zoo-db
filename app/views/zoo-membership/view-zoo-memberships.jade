@@ -10,6 +10,9 @@ block content
 		tbody
 			each zooMembership, index in ZooMemberships
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td #{zooMembership.id}
-					td #{zooMembership['Zoo CustomerId']}
-					td #{zooMembership.ZooId}
+					td
+						a(href="/view/zoo-membership/#{zooMembership.id}") #{zooMembership.id}
+					td
+						a(href="/view/zoo-membership/#{zooMembership.id}") #{zooMembership['Zoo CustomerId']}
+					td
+						a(href="/view/zoo-membership/#{zooMembership.id}") #{zooMembership.ZooId}

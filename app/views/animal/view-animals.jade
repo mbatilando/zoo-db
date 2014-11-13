@@ -7,16 +7,22 @@ block content
 				th id
 				th given_name
 				th weight
-				th picture
+				th picture_url
 				th birth_date
 				th gender
 		tbody
 			each animal, index in Animals
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td #{animal.id}
-					td #{animal.given_name}
-					td #{animal.weight}
-					td #{animal.picture}
-					td #{animal.birth_date}
-					td #{animal.gender}
+					td
+						a(href="/view/animal/#{animal.id}") #{animal.id}
+					td
+						a(href="/view/animal/#{animal.id}") #{animal.given_name}
+					td
+						a(href="/view/animal/#{animal.id}") #{animal.weight}
+					td
+						a(href="/view/animal/#{animal.id}") #{animal.picture_url}
+					td
+						a(href="/view/animal/#{animal.id}") #{animal.birth_date}
+					td
+						a(href="/view/animal/#{animal.id}") #{animal.gender}
 
