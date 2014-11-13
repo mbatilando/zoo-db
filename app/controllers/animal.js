@@ -7,7 +7,7 @@ module.exports = function (app) {
 };
 
 
-router.get('/animal/add', function (req, res, next) {
+router.get('/add', function (req, res, next) {
   res.render('animal/add-animal', {});
 });
 
@@ -21,4 +21,13 @@ router.get('/', function (req, res, next) {
   db['Animal'].findAll().success(function (Animals) {
     res.render('animal/view-animals', { Animals: Animals });
   });
+});
+
+router.post('/', function (req, res, next) {
+  console.log('end point hit');
+  console.log(req.body);
+  // db['Animal'].create(req.body).success(function (animal) {
+  //   console.log('created');
+  //   console.log(animal);
+  // });
 });
