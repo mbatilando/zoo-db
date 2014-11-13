@@ -14,15 +14,15 @@ block content
 			each animal, index in Animals
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
 					td
-						a(href="/view/animal/#{animal.id}") #{animal.id}
+						a(href="animal/#{animal.id}") #{animal.id}
 					td
-						a(href="/view/animal/#{animal.id}") #{animal.given_name}
+						a(href="animal/#{animal.id}") #{animal.given_name}
 					td
-						a(href="/view/animal/#{animal.id}") #{animal.weight}
+						a(href="animal/#{animal.id}") #{animal.weight}
 					td
-						a(href="/view/animal/#{animal.id}") #{animal.picture_url}
+						a(href="animal/#{animal.id}") #{animal.picture_url}
 					td
-						a(href="/view/animal/#{animal.id}") #{animal.birth_date}
+						a(href="animal/#{animal.id}") #{animal.birth_date}
 					td
-						a(href="/view/animal/#{animal.id}") #{animal.gender}
+						a(href="animal/#{animal.id}") #{animal.gender}
 

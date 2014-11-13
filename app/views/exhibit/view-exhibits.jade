@@ -11,8 +11,8 @@ block content
 			each exhibit, index in Exhibits
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
 					td
-						a(href="/view/exhibit/#{exhibit.id}") #{exhibit.id}
+						a(href="exhibit/#{exhibit.id}") #{exhibit.id}
 					td
-						a(href="/view/exhibit/#{exhibit.id}") #{exhibit.name}
+						a(href="exhibit/#{exhibit.id}") #{exhibit.name}
 					td
-						a(href="/view/exhibit/#{exhibit.id}") #{exhibit.ZookeeperId}
+						a(href="exhibit/#{exhibit.id}") #{exhibit.ZookeeperId}
