@@ -24,10 +24,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  console.log('end point hit');
-  console.log(req.body);
-  // db['Animal'].create(req.body).success(function (animal) {
-  //   console.log('created');
-  //   console.log(animal);
-  // });
+  db['Animal'].create(req.body).success(function (animal) {
+    res.render('animal/view-animal', { animal: animal });
+  });
 });
