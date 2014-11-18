@@ -25,6 +25,23 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
   db['Animal'].create(req.body).success(function (animal) {
-    res.render('animal/view-animal', { animal: animal });
+    db['Animal'].findAll().success(function (animals) {
+      req.dataProcessed = animals;
+      viewAnimals(req, res);
+    });
+  });
+});
+
+function viewAnimals (req, res) {
+  var context = req.dataProcessed;
+  res.render('animal/view-animals', { Animals: context });
+}
+
+router.put('/', function (req, res, next) {
+  db['Animal'].update(req.body).success(function (animal) {
+    db['Animal'].findAll().success(function (animals) {
+      req.dataProcessed = animals;
+      viewAnimals(req, res);
+    });
   });
 });
