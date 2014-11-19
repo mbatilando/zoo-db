@@ -37,7 +37,6 @@ function viewAnimals (req, res) {
 }
 
 router.put('/:id', function (req, res, next) {
-  console.log('~~~~~~~~~~~~PUT~~~~~~~~~~~~~~~')
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
     animal.updateAttributes(req.body).success(function (animal) {
       db['Animal'].findAll().success(function (animals) {
@@ -49,7 +48,6 @@ router.put('/:id', function (req, res, next) {
 });
 
 router.delete('/:id', function (req, res, next) {
-  console.log('~~~~~~~~~~~~~~~DELETING~~~~~~~~~~~~~~~~~')
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
     animal.destroy().success(function () {
       res.send(200);
