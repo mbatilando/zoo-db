@@ -1,21 +1,21 @@
 extends ../layout
 
 block content
-	form(class="custom-form zoo-form pure-form pure-form-stacked")
+	form(class="custom-form zoo-form pure-form pure-form-stacked" action="/zoo/" method="POST")
 		h1 Zoo Form
 		fieldset
 			label(for="name") Zoo Name
 			input(name="name", type="text", placeholder="My Awesome Zoo")
-			label(for="opening-time") Opening Time
-			select(name="opening-time")
-				option 12:00 AM
-				option 1:00 AM
-				option 2:00 AM
-			label(for="closing-time") Closing Time
-			select(name="closing-time")
-				option 12:00 AM
-				option 1:00 AM
-				option 2:00 AM
+			//- label(for="opening-time") Opening Time
+			//- select(name="opening-time")
+			//- 	option 12:00 AM
+			//- 	option 1:00 AM
+			//- 	option 2:00 AM
+			//- label(for="closing-time") Closing Time
+			//- select(name="closing-time")
+			//- 	option 12:00 AM
+			//- 	option 1:00 AM
+			//- 	option 2:00 AM
 			label(for="street") Street
 			input(name="street", type="text", placeholder="123 Folsom St.")
 			label(for="city") City

@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-	form(class="custom-form exhibit-form pure-form pure-form-stacked")
+	form(class="custom-form exhibit-form pure-form pure-form-stacked" action="/exhibit/" method="POST")
 		h1 Exhibit Form
 		fieldset
 			label(for="name") Name
