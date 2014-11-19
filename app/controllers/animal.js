@@ -6,7 +6,6 @@ module.exports = function (app) {
   app.use('/animal', router);
 };
 
-
 router.get('/add', function (req, res, next) {
   res.render('animal/add-animal', {});
 });
@@ -18,7 +17,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.get('/', function (req, res, next) {
-  db['Animal'].findAll().success(function (Animals) {
+  db['Animal'].findAll({ order: 'id ASC' }).success(function (Animals) {
     res.render('animal/view-animals', { Animals: Animals });
   });
 });
@@ -37,10 +36,23 @@ function viewAnimals (req, res) {
   res.render('animal/view-animals', { Animals: context });
 }
 
-router.put('/', function (req, res, next) {
-  db['Animal'].update(req.body).success(function (animal) {
-    db['Animal'].findAll().success(function (animals) {
-      req.dataProcessed = animals;
+router.put('/:id', function (req, res, next) {
+  console.log('~~~~~~~~~~~~PUT~~~~~~~~~~~~~~~')
+  db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
+    animal.updateAttributes(req.body).success(function (animal) {
+      db['Animal'].findAll().success(function (animals) {
+        req.dataProcessed = animals;
+        viewAnimals(req, res);
+      });
+    });
+  });
+});
+
+router.delete('/:id', function (req, res, next) {
+  console.log('~~~~~~~~~~~~~~~DELETING~~~~~~~~~~~~~~~~~')
+  db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
+    animal.destroy().success(function () {
+      res.send(200);
       viewAnimals(req, res);
     });
   });
