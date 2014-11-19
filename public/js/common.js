@@ -5,7 +5,6 @@ $(document).ready(function () {
 		var form = $(this),
 			entity = $('.update-form input[name="_entity"]').val(),
 			id = $('.update-form input[name="_id"]').val();
-		debugger
 		$.ajax({
 			type: 'PUT',
 			url: '/' + entity + '/' + id,

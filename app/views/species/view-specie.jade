@@ -4,10 +4,13 @@ block content
 	form(class="custom-form update-form pure-form pure-form-stacked")
 		h1 Species Form
 		fieldset
-			label(for="scientific-name") Scientific Name
-			input(name="scientific-name", type="text", placeholder="Mellivora Capensis" value="#{specie.scientific_name}")
-			label(for="common-name") Common Name
-			input(name="common-name", type="text", placeholder="Badger" value="#{specie.common_name}")
+			label(for="scientific_name") Scientific Name
+			input(name="scientific_name", type="text", placeholder="Mellivora Capensis" value="#{specie.scientific_name}")
+			label(for="common_name") Common Name
+			input(name="common_name", type="text", placeholder="Badger" value="#{specie.common_name}")
 			label(for="description") Description
 			textarea(name="description" placeholder="A species of mustelid...") #{specie.description}
+			input(type="hidden" name="_entity" value="species")
+			input(type="hidden" name="_id" value="#{specie.id}")
 		button(type="submit" class="pure-button pure-button-primary") Save
+	button(id="delete" class="pure-button button-error") Delete

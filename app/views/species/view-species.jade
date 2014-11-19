@@ -12,10 +12,10 @@ block content
 			each specie, index in Species
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
 					td
-						a(href="species/#{specie.id}") #{specie.id}
+						a(href="/species/#{specie.id}") #{specie.id}
 					td
-						a(href="species/#{specie.id}") #{specie.scientific_name}
+						a(href="/species/#{specie.id}") #{specie.scientific_name}
 					td
-						a(href="species/#{specie.id}") #{specie.common_name}
+						a(href="/species/#{specie.id}") #{specie.common_name}
 					td
-						a(href="species/#{specie.id}") #{specie.description}
+						a(href="/species/#{specie.id}") #{specie.description}

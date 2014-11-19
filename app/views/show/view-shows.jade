@@ -12,10 +12,10 @@ block content
 			each show, index in Shows
 				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
 					td
-						a(href="show/#{show.id}") #{show.id}
+						a(href="/show/#{show.id}") #{show.id}
 					td
-						a(href="show/#{show.id}") #{show.name}
+						a(href="/show/#{show.id}") #{show.name}
 					td
-						a(href="show/#{show.id}") #{show.time}
+						a(href="/show/#{show.id}") #{show.time}
 					td
-						a(href="show/#{show.id}") #{show.ExhibitId}
+						a(href="/show/#{show.id}") #{show.ExhibitId}

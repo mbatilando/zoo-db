@@ -28,4 +28,7 @@ block content
 			input(name="country" type="text" placeholder="USA" value="#{zoo.country}")
 			label(for="phone") Phone
 			input(name="phone" type="text" placeholder="(123) 456-7890" value="#{zoo.phone}")
+			input(type="hidden" name="_entity" value="zoo")
+			input(type="hidden" name="_id" value="#{zoo.id}")
 		button(type="submit" class="pure-button pure-button-primary") Save
+	button(id="delete" class="pure-button button-error") Delete
