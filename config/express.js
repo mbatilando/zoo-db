@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var sass = require('node-sass-middleware');
+// var sass = require('node-sass-middleware');
 
 module.exports = function(app, config) {
   app.set('views', config.root + '/app/views');
@@ -15,13 +15,13 @@ module.exports = function(app, config) {
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
 
-  app.use(
-   sass({
-       src: config.root + '/sass',
-       dest: config.root + '/public/css',
-       debug: true
-   })
-  );
+  // app.use(
+  //  sass({
+  //      src: config.root + '/sass',
+  //      dest: config.root + '/public/css',
+  //      debug: true
+  //  })
+  // );
 
   app.use(logger('dev'));
   app.use(bodyParser.json());
