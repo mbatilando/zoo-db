@@ -8,7 +8,10 @@ module.exports = function (app) {
 
 
 router.get('/add', function (req, res, next) {
-  res.render('exhibit/add-exhibit', {});
+  db['Zookeeper'].findAll().success(function (zookeepers) {
+    console.log(zookeepers);
+    res.render('exhibit/add-exhibit', { zookeepers: zookeepers });
+  });
 });
 
 router.get('/:id', function (req, res, next) {

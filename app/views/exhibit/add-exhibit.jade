@@ -6,6 +6,8 @@ block content
 		fieldset
 			label(for="name") Name
 			input(name="name", type="text", placeholder="Awesome Exhibit")
-			label(for="zookeeperId") ZookeeperId
-			input(name="zookeeperId", type="number", placeholder="1")
+			label(for="zookeeperId") Zookeeper
+			select(name="zookeeperId")
+				each zookeeper in zookeepers
+					option(value="#{zookeeper.id}") #{zookeeper.first_name} #{zookeeper.last_name}
 		button(type="submit" class="pure-button pure-button-primary") Create Exhibit
