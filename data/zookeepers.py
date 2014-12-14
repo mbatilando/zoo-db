@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 from random import randint
 from urllib import urlopen
 
-FIRST_NAME = "first_name"
-LAST_NAME = "last_name"
+FIRST = "first_name"
+LAST = "last_name"
 
 def get_zookeeper_data(url):
   soup = BeautifulSoup(urlopen(url).read())
@@ -16,7 +16,7 @@ def get_zookeeper_names(url):
     if "," in name:
       name = name[:name.index(",")]
     split_names = name.split()
-    names.append({FIRST_NAME: split_names[0], LAST_NAME: split_names[-1]})
+    names.append({FIRST: split_names[0], LAST: split_names[-1]})
   return names
 
 def random_digits(length):
@@ -29,12 +29,16 @@ def random_phone_number():
   return "(%s) %s-%s" % (random_digits(3), random_digits(3), random_digits(4))
 
 url = "http://zoo.sandiegozoo.org/content/key-leaders"
-content = "INSERT INTO \"Zookeepers\" (id, first_name, last_name, phone_number) VALUES\n"
+content = ("INSERT INTO \"Zookeepers\" " +
+    "(id, first_name, last_name, phone_number, work_days, ZooId) VALUES\n")
 key = 1000
 
+work_days = "null"
+ZooId = 0
+
 for name in get_zookeeper_names(url):
-  content += ("  (%d, '%s', '%s', '%s'),\n" %
-      (key, name[FIRST_NAME], name[LAST_NAME], random_phone_number()))
+  content += ("  (%d, '%s', '%s', '%s', %s, %d),\n" %
+      (key, name[FIRST], name[LAST], random_phone_number(), work_days, ZooId))
   key += 1
 
 content = content[:-2] + ";\n"
