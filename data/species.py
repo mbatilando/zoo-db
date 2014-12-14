@@ -30,7 +30,7 @@ def populate_panel_info(soup, panel_id, panel_info):
       panel_info[key] = div.find("div", {"class": "double-field-second"}).text.strip()
 
 url = "http://animals.sandiegozoo.org"
-content = "INSERT INTO Species (id, scientific_name, common_name, description) VALUES\n"
+content = "INSERT INTO \"Species\" (id, scientific_name, common_name, description) VALUES\n"
 key = 1000
 
 for link in get_species_links(url + "/animals-a-z"):
@@ -45,6 +45,6 @@ for link in get_species_links(url + "/animals-a-z"):
 content = content[:-2] + ";"
 
 sql_file = open("species.sql", "w")
-sql_file.write(content.encode("utf-8"))
+sql_file.write(content.encode("utf-8") + "\n")
 sql_file.close()
 
