@@ -1,0 +1,84 @@
+{
+    "Africa Rocks": [
+        "Amur Leopard",
+        "Honey Badger (Ratel)",
+        "Lynx",
+        "Meerkat",
+        "Peccary",
+        "Snow Leopard"
+    ],
+    "Asian Passage": [
+        "Andean Bear",
+        "Grizzly Bear",
+        "Indian Crested Porcupine",
+        "Lion-tailed Macaque",
+        "Spotted Hyena",
+        "Sun Bear"
+    ],
+    "Australian Outback": [
+        "Camel",
+        "Koala",
+        "Laughing Kookaburra",
+        "Tasmanian Devil",
+        "Wombat"
+    ],
+    "Discovery Outpost": [
+        "Anaconda",
+        "Boa",
+        "Chinese Alligator",
+        "Galápagos Tortoise",
+        "Hummingbird",
+        "King Cobra",
+        "Komodo Dragon",
+        "Leaf-cutter Ant",
+        "Macaw",
+        "Naked Mole-rat",
+        "Rattlesnake",
+        "Turtle & Terrapin"
+    ],
+    "Elephant Odyssey": [
+        "California Condor",
+        "Capybara",
+        "Dung Beetle",
+        "Elephant",
+        "Jaguar",
+        "Lion",
+        "Secretary Bird"
+    ],
+    "Lost Forest": [
+        "Bonobo",
+        "Flamingo",
+        "Gorilla",
+        "Harpy Eagle",
+        "Hippopotamus",
+        "Mandrill",
+        "Monkey",
+        "Okapi",
+        "Orangutan",
+        "Otter",
+        "Pygmy Hippopotamus",
+        "Pygmy Marmoset",
+        "Tapir",
+        "Tiger"
+    ],
+    "Northern Frontier": [
+        "Arctic Fox",
+        "Maned Wolf",
+        "Mountain Lion",
+        "Polar Bear",
+        "Reindeer",
+        "Zebra"
+    ],
+    "Panda Canyon": [
+        "Giant Panda",
+        "Mang Mountain Viper",
+        "Red Panda",
+        "Takin"
+    ],
+    "Urban Jungle": [
+        "Cheetah",
+        "Clouded Leopard",
+        "Giraffe",
+        "Rhinoceros"
+    ]
+}
