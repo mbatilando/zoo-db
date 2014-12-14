@@ -30,7 +30,7 @@ def random_phone_number():
 
 url = "http://zoo.sandiegozoo.org/content/key-leaders"
 content = ("INSERT INTO \"Zookeepers\" " +
-    "(id, first_name, last_name, phone_number, work_days, ZooId) VALUES\n")
+    "(id, first_name, last_name, phone, work_days, \"ZooId\") VALUES\n")
 key = 1000
 
 work_days = "null"
