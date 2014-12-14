@@ -45,7 +45,7 @@ content = ("INSERT INTO \"Zookeepers\" " +
     "(id, first_name, last_name, phone, work_days, \"ZooId\") VALUES\n")
 
 key = 1000
-ZooId = 0
+ZooId = 1000
 
 for name in get_zookeeper_names(url):
   content += ("  (%d, '%s', '%s', '%s', '%s', %d),\n" %
