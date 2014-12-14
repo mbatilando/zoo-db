@@ -16,7 +16,8 @@ module.exports = function (sequelize, DataTypes) {
           Zoo.hasMany(models.ZooMembership);
           Zoo.hasMany(models.Zookeeper);
         }
-      }
+      },
+      timestamps: false
     }
   );
 

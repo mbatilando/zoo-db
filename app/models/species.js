@@ -11,7 +11,8 @@ module.exports = function (sequelize, DataTypes) {
           	foreignKey: 'SpeciesId'
           });
         }
-      }
+      },
+      timestamps: false
     }
   );
 

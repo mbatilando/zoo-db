@@ -10,7 +10,8 @@ module.exports = function (sequelize, DataTypes) {
         associate: function(models) {
           Zookeeper.hasMany(models.Exhibit);
         }
-      }
+      },
+      timestamps: false
     }
   );
 
