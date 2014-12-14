@@ -1,16 +1,23 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form update-form pure-form pure-form-stacked")
-		h1 Zoo Membership Form
-		fieldset
-			label(for="ZooId") Zoo ID
-			input(name="ZooId", type="number", placeholder="1" value="#{zooMembership.ZooId}")
-			label(for="Zoo CustomerId") Zoo Customer ID
-			input(name="Zoo CustomerId", type="number", placeholder="1" value="#{zooMembership['Zoo CustomerId']}")
-			label(for="membership_expiration") Membership Expiration
-			input(name="membership_expiration", type="text", placeholder="Nov. 10, 1992" value="#{zooMembership.membership_expiration}")
-			input(type="hidden" name="_entity" value="zoo-membership")
-			input(type="hidden" name="_id" value="#{zooMembership.id}")
-		button(type="submit" class="pure-button pure-button-primary") Save
-	button(id="delete" class="pure-button button-error") Delete
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Zoo Membership Form
+			fieldset
+				label(for="ZooId") Zoo ID
+				input(name="ZooId", type="number", placeholder="1" value="#{zooMembership.ZooId}")
+				label(for="Zoo CustomerId") Zoo Customer ID
+				input(name="Zoo CustomerId", type="number", placeholder="1" value="#{zooMembership['Zoo CustomerId']}")
+				label(for="membership_expiration") Membership Expiration
+				input(name="membership_expiration", type="text", placeholder="Nov. 10, 1992" value="#{zooMembership.membership_expiration}")
+				input(type="hidden" name="_entity" value="zoo-membership")
+				input(type="hidden" name="_id" value="#{zooMembership.id}")
+			button(type="submit" class="pure-button pure-button-primary") Save
+		button(id="delete" class="pure-button button-error") Delete

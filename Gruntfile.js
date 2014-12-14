@@ -18,7 +18,11 @@ module.exports = function (grunt) {
         },
         files: {
           'public/css/form.css': 'sass/form.scss',
-          'public/css/common.css': 'sass/common.scss'
+          'public/css/common.css': 'sass/common.scss',
+          'public/css/authentication.css': 'sass/authentication.scss',
+          'public/css/main-layout.css': 'sass/main-layout.scss',
+          'public/css/header.css': 'sass/header.scss',
+          'public/css/sidebar.css': 'sass/sidebar.scss'
         }
         // files: [{
         //   expand: true,

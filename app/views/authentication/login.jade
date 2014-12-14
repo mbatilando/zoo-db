@@ -1,0 +1,34 @@
+extends authentication-layout
+
+block extraCss
+	link(rel='stylesheet', href='/css/authentication.css')
+
+block content
+	div(class="login-partial")
+		div(class="brand-container")
+			img(class="brand-icon" src="/img/brand.png")
+			div(class="brand-caption")
+				span Welcome to
+				span(class="brand-name") ZooDB
+		div(class="login-box")
+			form(name="login-form" class="pure-form" method="POST" action="/authentication/login")
+				input(type="text"
+					  name="username"
+					  placeholder="Username"
+					  class="form-control login-field username")
+
+				label(class="login-field-icon fui-user" for="login-name")
+
+				input(name="password"
+					  type="password"
+					  class="form-control login-field password"
+					  placeholder="Password")
+
+				label(class="login-field-icon fui-lock" for="login-name")
+
+				input(type="submit"
+					  value="Log In"
+					  class="pure-button")
+
+				if error
+					span(class="error login-error") #{error}

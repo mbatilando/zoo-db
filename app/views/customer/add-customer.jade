@@ -1,16 +1,23 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form customer-form pure-form pure-form-stacked" action="/customer/" method="POST")
-		h1 Customer Membership Form
-		fieldset
-			label(for="first_name") First Name
-			input(name="first_name", type="text", placeholder="John")
-			label(for="last_name") Last Name
-			input(name="last_name", type="text", placeholder="Doe")
-			label(for="phone") Phone
-			input(name="phone" type="text" placeholder="(510) 432-8970")
-			label(for="zoo") Zoo
-			select(name="zoo" type="text")
-				option My Awesome Zoo
-		button(type="submit" class="pure-button pure-button-primary") Create Member
+	div(class="content")
+		form(class="custom-form customer-form pure-form pure-form-stacked" action="/customer/" method="POST")
+			h1 Customer Membership Form
+			fieldset
+				label(for="first_name") First Name
+				input(name="first_name", type="text", placeholder="John")
+				label(for="last_name") Last Name
+				input(name="last_name", type="text", placeholder="Doe")
+				label(for="phone") Phone
+				input(name="phone" type="text" placeholder="(510) 432-8970")
+				label(for="zoo") Zoo
+				select(name="zoo" type="text")
+					option My Awesome Zoo
+			button(type="submit" class="pure-button pure-button-primary") Create Member

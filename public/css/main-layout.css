@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  flex-flow: row;
+}
+.main .sidebar {
+  flex: 0 0 225px;
+}
+.main .content {
+  flex: 1 0 500px;
+}
+
+/*# sourceMappingURL=main-layout.css.map */

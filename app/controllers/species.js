@@ -7,18 +7,18 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-  res.render('species/add-species', {});
+  res.render('species/add-species', {user: req.session.username});
 });
 
 router.get('/:id', function (req, res, next) {
   db['Species'].find({ where: { id: req.params.id }}).success(function (specie) {
-    res.render('species/view-specie', { specie: specie });
+    res.render('species/view-specie', { specie: specie, user: req.session.username });
   });
 });
 
 router.get('/', function (req, res, next) {
   db['Species'].findAll({ order: 'id ASC' }).success(function (Species) {
-    res.render('species/view-species', { Species: Species });
+    res.render('species/view-species', { Species: Species, user: req.session.username });
   });
 });
 
@@ -33,7 +33,7 @@ router.post('/', function (req, res, next) {
 
 function viewSpecies (req, res) {
   var context = req.dataProcessed;
-  res.render('species/view-species', { Species: context });
+  res.render('species/view-species', { Species: context, user: req.session.username });
 }
 
 router.put('/:id', function (req, res, next) {

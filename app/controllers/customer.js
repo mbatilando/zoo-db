@@ -7,18 +7,18 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-	res.render('customer/add-customer', {});
+	res.render('customer/add-customer', { user: req.session.username });
 });
 
 router.get('/:id', function (req, res, next) {
   db['Zoo Customer'].find({ where: { id: req.params.id }}).success(function (customer) {
-    res.render('customer/view-customer', { customer: customer });
+    res.render('customer/view-customer', { customer: customer, user: req.session.username });
   });
 });
 
 router.get('/', function (req, res, next) {
   db['Zoo Customer'].findAll({ order: 'id ASC' }).success(function (ZooCustomers) {
-    res.render('customer/view-customers', { ZooCustomers: ZooCustomers });
+    res.render('customer/view-customers', { ZooCustomers: ZooCustomers, user: req.session.username });
   });
 });
 
@@ -33,7 +33,7 @@ router.post('/', function (req, res, next) {
 
 function viewZooCustomers (req, res) {
   var context = req.dataProcessed;
-  res.render('customer/view-customers', { ZooCustomers: context });
+  res.render('customer/view-customers', { ZooCustomers: context, user: req.session.username });
 }
 
 router.put('/:id', function (req, res, next) {

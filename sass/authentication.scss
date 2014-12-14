@@ -1,0 +1,146 @@
+.login-partial {
+    display: flex;
+    flex-flow: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #525353;
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .brand-container {
+        flex: 0 0 120px;
+        margin-right: 40px;
+
+        .brand-icon {
+            display: block;
+            margin: 0 auto;
+            height: 75px;
+        }
+
+        .brand-caption {
+            margin: 25px auto;
+            color: white;
+            width: 100px;
+            font-weight: 300;
+            font-size: 18px;
+
+            .brand-name {
+                font-weight: bold;
+                display: block;
+            }
+        }
+    }
+
+    .login-box {
+        flex: 0 0 400px;
+        padding: 0 2% 3% 2%;
+        background-color: #edeff1;
+        border-radius: 4px;
+        position: relative;
+
+        .login-field {
+            padding: 2%;
+        }
+
+        .username {
+            display: block;
+            width: 100%;
+            margin: 25px auto 0 auto;
+        }
+
+        .password {
+            display: block;
+            width: 100%;
+            margin: 25px auto 0 auto;
+        }
+
+        .fui-user {
+            font-size: 23px;
+            position: absolute;
+            right: 30px;
+            top: 19px;
+        }
+
+        .fui-lock {
+            font-size: 23px;
+            position: absolute;
+            right: 30px;
+            top: 88px;
+        }
+
+        input[type="submit"] {
+            width: 400px;
+            margin-top: 25px;
+            cursor: pointer;
+            background-color: #b4ad9e;
+            color: #ebeced;
+
+            &.disabled {
+                background-color: #bdc3c7;
+                cursor: default;
+            }
+        }
+
+        .register-container {
+            text-align: center;
+            display: block;
+            font-size: 16px;
+            color: #bdc3c7;
+            margin: 5px 0;
+            position: relative;
+            top: 20px;
+
+            .register {
+                color: #333;
+                font-weight: bold;
+                cursor: pointer;
+                &.disabled {
+                  color: #bdc3c7;
+                }
+            }
+        }
+
+        .form-control:focus {
+            border-color: #2966c0;
+        }
+    }
+
+    .error {
+        font-size: 14px;
+        color: red;
+
+        &.username-error {
+            position: absolute;
+            top: 65px;
+            left: 30px;
+        }
+
+        &.password-error {
+            position: absolute;
+            top: 127px;
+            left: 30px;
+        }
+
+        &.login-error {
+            position: absolute;
+            left: 23px;
+            bottom: 10px;
+            width: 400px;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    .disabled {
+        color: #bdc3c7;
+        cursor: default !important;
+        pointer-events: none;
+    }
+}

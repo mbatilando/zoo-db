@@ -1,0 +1,15 @@
+.sidebar .pure-menu {
+  background: #b4ad9e;
+}
+.sidebar .pure-menu-heading {
+  font-weight: bold;
+  color: white;
+}
+.sidebar .pure-menu ul li a {
+  color: white;
+}
+.sidebar .pure-menu ul li a:hover {
+  background: #525353;
+}
+
+/*# sourceMappingURL=sidebar.css.map */

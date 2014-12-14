@@ -1,0 +1,40 @@
+.pure-menu.header {
+  background: #525353;
+  overflow: auto;
+  height: 50px;
+}
+.pure-menu.header .brand {
+  height: 100%;
+  float: left;
+}
+.pure-menu.header .brand-text {
+  position: relative;
+  left: 20px;
+  color: white;
+  font-weight: bold;
+}
+.pure-menu.header .brand-icon {
+  height: 33px;
+  position: relative;
+  top: 11px;
+  left: 10px;
+}
+.pure-menu.header .options {
+  float: right;
+}
+.pure-menu.header .username {
+  font-weight: bold;
+  color: white;
+}
+.pure-menu.header .options li {
+  padding: 7px;
+  color: white;
+}
+.pure-menu.header .options li a {
+  color: white;
+}
+.pure-menu.header .options li a:hover {
+  background: none;
+}
+
+/*# sourceMappingURL=header.css.map */

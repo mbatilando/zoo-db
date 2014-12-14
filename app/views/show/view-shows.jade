@@ -1,21 +1,28 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table custom-table")
-		thead
-			tr
-				th id
-				th name
-				th time
-				th ExhibitId
-		tbody
-			each show, index in Shows
-				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td
-						a(href="/show/#{show.id}") #{show.id}
-					td
-						a(href="/show/#{show.id}") #{show.name}
-					td
-						a(href="/show/#{show.id}") #{show.time}
-					td
-						a(href="/show/#{show.id}") #{show.ExhibitId}
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th name
+					th time
+					th ExhibitId
+			tbody
+				each show, index in Shows
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/show/#{show.id}") #{show.id}
+						td
+							a(href="/show/#{show.id}") #{show.name}
+						td
+							a(href="/show/#{show.id}") #{show.time}
+						td
+							a(href="/show/#{show.id}") #{show.ExhibitId}

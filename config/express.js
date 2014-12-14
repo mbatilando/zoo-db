@@ -7,7 +7,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-// var sass = require('node-sass-middleware');
+var session = require('express-session');
+var sass = require('node-sass-middleware');
 
 module.exports = function(app, config) {
   app.set('views', config.root + '/app/views');
@@ -15,23 +16,34 @@ module.exports = function(app, config) {
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
 
-  // app.use(
-  //  sass({
-  //      src: config.root + '/sass',
-  //      dest: config.root + '/public/css',
-  //      debug: true
-  //  })
-  // );
+  app.use(
+   sass({
+       src: config.root + '/sass',
+       dest: config.root + '/public/css',
+       debug: true
+   })
+  );
 
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
     extended: true
   }));
+  var sess = {
+    key: 'zooDb',
+    secret: 'vF24(#0ag_a54$zh{41;S#0vyM?{V4',
+    cookie: { maxAge: 6000000 },
+    resave: true,
+    saveUninitialized: true
+  };
+  app.use(session(sess));
   app.use(cookieParser());
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
+
+
+
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {

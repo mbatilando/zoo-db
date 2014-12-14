@@ -1,20 +1,27 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form animal-form pure-form pure-form-stacked" action="/animal/" method="POST")
-		h1 Animal Form
-		fieldset
-			label(for="given_name") Given Name
-			input(name="given_name", type="text", placeholder="Mr. Whiskers")
-			label(for="weight") Weight (lbs.)
-			input(name="weight", type="number", placeholder="135")
-			label(for="picture_url") Picture URL
-			input(name="picture_url", type="text", placeholder="http://coolpicture.com/123abc")
-			label(for="birth-date") Birth Date
-			input(name="birth-date", type="text", placeholder="November 10, 1992")
-			label(for="gender") Gender
-			select(name="gender")
-				option(value="male") Male
-				option(value="female") Female
-			input(type="hidden" name="_method" value="POST")
-		button(type="submit" class="pure-button pure-button-primary") Create Animal
+	div(class="content")
+			form(class="custom-form animal-form pure-form pure-form-stacked" action="/animal/" method="POST")
+				h1 Animal Form
+				fieldset
+					label(for="given_name") Given Name
+					input(name="given_name", type="text", placeholder="Mr. Whiskers")
+					label(for="weight") Weight (lbs.)
+					input(name="weight", type="number", placeholder="135")
+					label(for="picture_url") Picture URL
+					input(name="picture_url", type="text", placeholder="http://coolpicture.com/123abc")
+					label(for="birth-date") Birth Date
+					input(name="birth-date", type="text", placeholder="November 10, 1992")
+					label(for="gender") Gender
+					select(name="gender")
+						option(value="male") Male
+						option(value="female") Female
+					input(type="hidden" name="_method" value="POST")
+				button(type="submit" class="pure-button pure-button-primary") Create Animal

@@ -1,0 +1,12 @@
+.main {
+	display: flex;
+	flex-flow: row;
+
+	.sidebar {
+		flex: 0 0 225px;
+	}
+
+	.content {
+		flex: 1 0 500px;
+	}
+}

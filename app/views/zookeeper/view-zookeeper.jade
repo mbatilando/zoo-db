@@ -1,26 +1,33 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form update-form pure-form pure-form-stacked")
-		h1 Zookeeper Form
-		fieldset
-			label(for="first_name") First Name
-			input(name="first_name", type="text", placeholder="John" value="#{zookeeper.first_name}")
-			label(for="last_name") Last Name
-			input(name="last_name", type="text", placeholder="Doe" value="#{zookeeper.last_name}")
-			label(for="phone") Phone
-			input(name="phone" type="text" placeholder="(510) 432-8970" value="#{zookeeper.phone}")
-			label(for="zoo") Zoo ID
-			input(name="zoo" type="text" value="#{zookeeper.ZooId}")
-			fieldset(name="work")
-				<legend>Work Days</legend>
-				label(for="monday pure-checkbox") Monday 
-					input(name="monday" type="checkbox")
-				label(for="tuesday pure-checkbox") Tuesday 
-					input(name="tuesday pure-checkbox" type="checkbox")
-				label(for="wednesday pure-checkbox") Wednesday 
-					input(name="wednesday pure-checkbox" type="checkbox")
-			input(type="hidden" name="_entity" value="zookeeper")
-			input(type="hidden" name="_id" value="#{zookeeper.id}")
-		button(type="submit" class="pure-button pure-button-primary") Save
-	button(id="delete" class="pure-button button-error") Delete
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Zookeeper Form
+			fieldset
+				label(for="first_name") First Name
+				input(name="first_name", type="text", placeholder="John" value="#{zookeeper.first_name}")
+				label(for="last_name") Last Name
+				input(name="last_name", type="text", placeholder="Doe" value="#{zookeeper.last_name}")
+				label(for="phone") Phone
+				input(name="phone" type="text" placeholder="(510) 432-8970" value="#{zookeeper.phone}")
+				label(for="zoo") Zoo ID
+				input(name="zoo" type="text" value="#{zookeeper.ZooId}")
+				fieldset(name="work")
+					<legend>Work Days</legend>
+					label(for="monday pure-checkbox") Monday 
+						input(name="monday" type="checkbox")
+					label(for="tuesday pure-checkbox") Tuesday 
+						input(name="tuesday pure-checkbox" type="checkbox")
+					label(for="wednesday pure-checkbox") Wednesday 
+						input(name="wednesday pure-checkbox" type="checkbox")
+				input(type="hidden" name="_entity" value="zookeeper")
+				input(type="hidden" name="_id" value="#{zookeeper.id}")
+			button(type="submit" class="pure-button pure-button-primary") Save
+		button(id="delete" class="pure-button button-error") Delete

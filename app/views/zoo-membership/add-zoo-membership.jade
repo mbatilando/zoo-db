@@ -1,13 +1,20 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form zoo-membership-form pure-form pure-form-stacked" action="/zoo-membership/" method="POST")
-		h1 Zoo Membership Form
-		fieldset
-			label(for="ZooId") Zoo ID
-			input(name="ZooId", type="number", placeholder="1")
-			label(for="Zoo CustomerId") Zoo Customer ID
-			input(name="Zoo CustomerId", type="number", placeholder="1")
-			//- label(for="membership_expiration") Membership Expiration
-			//- input(name="membership_expiration", type="text", placeholder="Nov. 10, 1992")
-		button(type="submit" class="pure-button pure-button-primary") Create Zoo Membership
+	div(class="content")
+		form(class="custom-form zoo-membership-form pure-form pure-form-stacked" action="/zoo-membership/" method="POST")
+			h1 Zoo Membership Form
+			fieldset
+				label(for="ZooId") Zoo ID
+				input(name="ZooId", type="number", placeholder="1")
+				label(for="Zoo CustomerId") Zoo Customer ID
+				input(name="Zoo CustomerId", type="number", placeholder="1")
+				//- label(for="membership_expiration") Membership Expiration
+				//- input(name="membership_expiration", type="text", placeholder="Nov. 10, 1992")
+			button(type="submit" class="pure-button pure-button-primary") Create Zoo Membership

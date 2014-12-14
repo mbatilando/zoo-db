@@ -1,16 +1,23 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form update-form pure-form pure-form-stacked")
-		h1 Customer Membership Form
-		fieldset
-			label(for="first_name") First Name
-			input(name="first_name", type="text", placeholder="John", value="#{customer.first_name}")
-			label(for="last_name") Last Name
-			input(name="last_name", type="text", placeholder="Doe" value="#{customer.last_name}")
-			label(for="phone") Phone
-			input(name="phone" type="text" placeholder="(510) 432-8970" value="#{customer.phone}")
-			input(type="hidden" name="_entity" value="customer")
-			input(type="hidden" name="_id" value="#{customer.id}")
-		button(type="submit" class="pure-button pure-button-primary") Save
-	button(id="delete" class="pure-button button-error") Delete
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Customer Membership Form
+			fieldset
+				label(for="first_name") First Name
+				input(name="first_name", type="text", placeholder="John", value="#{customer.first_name}")
+				label(for="last_name") Last Name
+				input(name="last_name", type="text", placeholder="Doe" value="#{customer.last_name}")
+				label(for="phone") Phone
+				input(name="phone" type="text" placeholder="(510) 432-8970" value="#{customer.phone}")
+				input(type="hidden" name="_entity" value="customer")
+				input(type="hidden" name="_id" value="#{customer.id}")
+			button(type="submit" class="pure-button pure-button-primary") Save
+		button(id="delete" class="pure-button button-error") Delete

@@ -2,23 +2,30 @@ var express = require('express'),
     router = express.Router(),
     db = require('../models');
 
+function authenticate (req) {
+  if (!req.session.username || !req.session.user_type) {
+    return false;
+  }
+  return true;
+}
+
 module.exports = function (app) {
   app.use('/animal', router);
 };
 
 router.get('/add', function (req, res, next) {
-  res.render('animal/add-animal', {});
+  res.render('animal/add-animal', { user: req.session.username });
 });
 
 router.get('/:id', function (req, res, next) {
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
-    res.render('animal/view-animal', { animal: animal });
+    res.render('animal/view-animal', { animal: animal, user: req.session.username });
   });
 });
 
 router.get('/', function (req, res, next) {
   db['Animal'].findAll({ order: 'id ASC' }).success(function (Animals) {
-    res.render('animal/view-animals', { Animals: Animals });
+    res.render('animal/view-animals', { Animals: Animals, user: req.session.username });
   });
 });
 
@@ -33,7 +40,7 @@ router.post('/', function (req, res, next) {
 
 function viewAnimals (req, res) {
   var context = req.dataProcessed;
-  res.render('animal/view-animals', { Animals: context });
+  res.render('animal/view-animals', { Animals: context, user: req.session.username });
 }
 
 router.put('/:id', function (req, res, next) {

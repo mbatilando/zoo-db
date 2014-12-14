@@ -7,18 +7,18 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-  res.render('zookeeper/add-zookeeper', {});
+  res.render('zookeeper/add-zookeeper', {user: req.session.username});
 });
 
 router.get('/:id', function (req, res, next) {
   db['Zookeeper'].find({ where: { id: req.params.id }}).success(function (zookeeper) {
-    res.render('zookeeper/view-zookeeper', { zookeeper: zookeeper });
+    res.render('zookeeper/view-zookeeper', { zookeeper: zookeeper, user: req.session.username });
   });
 });
 
 router.get('/', function (req, res, next) {
   db['Zookeeper'].findAll({ order: 'id ASC' }).success(function (Zookeepers) {
-    res.render('zookeeper/view-zookeepers', { Zookeepers: Zookeepers });
+    res.render('zookeeper/view-zookeepers', { Zookeepers: Zookeepers, user: req.session.username });
   });
 });
 

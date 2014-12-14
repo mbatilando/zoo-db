@@ -1,34 +1,41 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form update-form pure-form pure-form-stacked")
-		h1 Zoo Form
-		fieldset
-			label(for="name") Zoo Name
-			input(name="name", type="text", placeholder="My Awesome Zoo" value="#{zoo.name}")
-			//- label(for="opening-time") Opening Time
-			//- select(name="opening-time")
-			//- 	option 12:00 AM
-			//- 	option 1:00 AM
-			//- 	option 2:00 AM
-			//- label(for="closing-time") Closing Time
-			//- select(name="closing-time")
-			//- 	option 12:00 AM
-			//- 	option 1:00 AM
-			//- 	option 2:00 AM
-			label(for="street") Street
-			input(name="street", type="text", placeholder="123 Folsom St." value="#{zoo.street}")
-			label(for="city") City
-			input(name="city", type="text", placeholder="San Francisco" value="#{zoo.city}")
-			label(for="state") State
-			input(name="state", type="text", placeholder="CA" value="#{zoo.state}")
-			label(for="zip") Zip
-			input(name="zip", type="number" placeholder="95758" value="#{zoo.zip}")
-			label(for="country") Country
-			input(name="country" type="text" placeholder="USA" value="#{zoo.country}")
-			label(for="phone") Phone
-			input(name="phone" type="text" placeholder="(123) 456-7890" value="#{zoo.phone}")
-			input(type="hidden" name="_entity" value="zoo")
-			input(type="hidden" name="_id" value="#{zoo.id}")
-		button(type="submit" class="pure-button pure-button-primary") Save
-	button(id="delete" class="pure-button button-error") Delete
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Zoo Form
+			fieldset
+				label(for="name") Zoo Name
+				input(name="name", type="text", placeholder="My Awesome Zoo" value="#{zoo.name}")
+				//- label(for="opening-time") Opening Time
+				//- select(name="opening-time")
+				//- 	option 12:00 AM
+				//- 	option 1:00 AM
+				//- 	option 2:00 AM
+				//- label(for="closing-time") Closing Time
+				//- select(name="closing-time")
+				//- 	option 12:00 AM
+				//- 	option 1:00 AM
+				//- 	option 2:00 AM
+				label(for="street") Street
+				input(name="street", type="text", placeholder="123 Folsom St." value="#{zoo.street}")
+				label(for="city") City
+				input(name="city", type="text", placeholder="San Francisco" value="#{zoo.city}")
+				label(for="state") State
+				input(name="state", type="text", placeholder="CA" value="#{zoo.state}")
+				label(for="zip") Zip
+				input(name="zip", type="number" placeholder="95758" value="#{zoo.zip}")
+				label(for="country") Country
+				input(name="country" type="text" placeholder="USA" value="#{zoo.country}")
+				label(for="phone") Phone
+				input(name="phone" type="text" placeholder="(123) 456-7890" value="#{zoo.phone}")
+				input(type="hidden" name="_entity" value="zoo")
+				input(type="hidden" name="_id" value="#{zoo.id}")
+			button(type="submit" class="pure-button pure-button-primary") Save
+		button(id="delete" class="pure-button button-error") Delete

@@ -7,18 +7,21 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-	res.render('zoo/add-zoo', {});
+  if (req.session.username) {
+    var username = req.session.username;
+  }
+	res.render('zoo/add-zoo', { user: username, user: req.session.username });
 });
 
 router.get('/:id', function (req, res, next) {
   db['Zoo'].find({ where: { id: req.params.id }}).success(function (zoo) {
-    res.render('zoo/view-zoo', { zoo: zoo });
+    res.render('zoo/view-zoo', { zoo: zoo, user: req.session.username });
   });
 });
 
 router.get('/', function (req, res, next) {
   db['Zoo'].findAll({ order: 'id ASC' }).success(function (Zoos) {
-    res.render('zoo/view-zoos', { Zoos: Zoos });
+    res.render('zoo/view-zoos', { Zoos: Zoos, user: req.session.username });
   });
 });
 

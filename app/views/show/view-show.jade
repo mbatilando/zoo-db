@@ -1,19 +1,26 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form update-form pure-form pure-form-stacked")
-		h1 Show Form
-		fieldset
-			label(for="name") Name
-			input(name="name", type="text", placeholder="My Awesome Show" value="#{show.name}")
-			//- label(for="time") Time
-			//- select(name="time")
-			//- 	option 12:00 AM
-			//- 	option 1:00 AM
-			//- 	option 2:00 AM
-			label(for="exhibitId") ExhibitId
-			input(name="exhibitId", type="number", placeholder="1" value="#{show.id}")
-			input(type="hidden" name="_entity" value="show")
-			input(type="hidden" name="_id" value="#{show.id}")
-			button(type="submit" class="pure-button pure-button-primary") Save
-	button(id="delete" class="pure-button button-error") Delete
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Show Form
+			fieldset
+				label(for="name") Name
+				input(name="name", type="text", placeholder="My Awesome Show" value="#{show.name}")
+				//- label(for="time") Time
+				//- select(name="time")
+				//- 	option 12:00 AM
+				//- 	option 1:00 AM
+				//- 	option 2:00 AM
+				label(for="exhibitId") ExhibitId
+				input(name="exhibitId", type="number", placeholder="1" value="#{show.id}")
+				input(type="hidden" name="_entity" value="show")
+				input(type="hidden" name="_id" value="#{show.id}")
+				button(type="submit" class="pure-button pure-button-primary") Save
+		button(id="delete" class="pure-button button-error") Delete

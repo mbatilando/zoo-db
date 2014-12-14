@@ -1,28 +1,35 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th given_name
-				th weight
-				th picture_url
-				th birth_date
-				th gender
-		tbody
-			each animal, index in Animals
-				tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-					td
-						a(href="/animal/#{animal.id}") #{animal.id}
-					td
-						a(href="/animal/#{animal.id}") #{animal.given_name}
-					td
-						a(href="/animal/#{animal.id}") #{animal.weight}
-					td
-						a(href="/animal/#{animal.id}") #{animal.picture_url}
-					td
-						a(href="/animal/#{animal.id}") #{animal.birth_date}
-					td
-						a(href="/animal/#{animal.id}") #{animal.gender}
+	div(class="content")
+		table(class="pure-table")
+			thead
+				tr
+					th id
+					th given_name
+					th weight
+					th picture_url
+					th birth_date
+					th gender
+			tbody
+				each animal, index in Animals
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/animal/#{animal.id}") #{animal.id}
+						td
+							a(href="/animal/#{animal.id}") #{animal.given_name}
+						td
+							a(href="/animal/#{animal.id}") #{animal.weight}
+						td
+							a(href="/animal/#{animal.id}") #{animal.picture_url}
+						td
+							a(href="/animal/#{animal.id}") #{animal.birth_date}
+						td
+							a(href="/animal/#{animal.id}") #{animal.gender}
 
