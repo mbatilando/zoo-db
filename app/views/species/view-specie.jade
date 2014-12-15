@@ -19,5 +19,6 @@ block content
 				textarea(name="description" placeholder="A species of mustelid...") #{specie.description}
 				input(type="hidden" name="_entity" value="species")
 				input(type="hidden" name="_id" value="#{specie.id}")
-			button(type="submit" class="pure-button pure-button-primary") Save
-		button(id="delete" class="pure-button button-error") Delete
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete

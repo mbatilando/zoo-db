@@ -19,5 +19,6 @@ block content
 				input(name="membership_expiration", type="text", placeholder="Nov. 10, 1992" value="#{zooMembership.membership_expiration}")
 				input(type="hidden" name="_entity" value="zoo-membership")
 				input(type="hidden" name="_id" value="#{zooMembership.id}")
-			button(type="submit" class="pure-button pure-button-primary") Save
-		button(id="delete" class="pure-button button-error") Delete
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete

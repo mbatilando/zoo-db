@@ -1,5 +1,6 @@
 .sidebar .pure-menu {
-  background: #b4ad9e;
+  background: none;
+  border: none;
 }
 .sidebar .pure-menu-heading {
   font-weight: bold;

@@ -4,6 +4,7 @@
 }
 .main .sidebar {
   flex: 0 0 225px;
+  background: #b4ad9e;
 }
 .main .content {
   flex: 1 0 500px;

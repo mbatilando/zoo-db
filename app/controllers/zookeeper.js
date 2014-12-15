@@ -14,8 +14,10 @@ router.get('/add', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  db['Zookeeper'].find({ where: { id: req.params.id }}).success(function (zookeeper) {
-    res.render('zookeeper/view-zookeeper', { zookeeper: zookeeper, user: req.session.username });
+  db['Zoo'].findAll().success(function (zoos) {
+    db['Zookeeper'].find({ where: { id: req.params.id }}).success(function (zookeeper) {
+      res.render('zookeeper/view-zookeeper', { zookeeper: zookeeper, user: req.session.username, zoos: zoos });
+    });
   });
 });
 

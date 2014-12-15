@@ -20,7 +20,7 @@ block content
 							option(value="#{timeslot.time}" selected) #{timeslot.formatted}
 						else
 							option(value="#{timeslot.time}") #{timeslot.formatted}
-				label(for="closing_time") Opening Time
+				label(for="closing_time") Closing Time
 				select(name="closing_time")
 					each timeslot in timeslots
 						if timeslot.closing_time
@@ -41,5 +41,6 @@ block content
 				input(name="phone" type="text" placeholder="(123) 456-7890" value="#{zoo.phone}")
 				input(type="hidden" name="_entity" value="zoo")
 				input(type="hidden" name="_id" value="#{zoo.id}")
-			button(type="submit" class="pure-button pure-button-primary") Save
-		button(id="delete" class="pure-button button-error") Delete
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete

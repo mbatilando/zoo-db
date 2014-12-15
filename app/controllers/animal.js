@@ -37,6 +37,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  console.log(req.body);
   db['Animal'].create(req.body).success(function (animal) {
     db['Animal'].findAll().success(function (animals) {
       req.dataProcessed = animals;

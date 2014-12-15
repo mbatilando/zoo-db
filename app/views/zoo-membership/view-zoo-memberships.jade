@@ -14,6 +14,7 @@ block content
 					th id
 					th Zoo CustomerId
 					th ZooId
+					th membership_expiration
 			tbody
 				each zooMembership, index in ZooMemberships
 					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
@@ -23,3 +24,5 @@ block content
 							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership['Zoo CustomerId']}
 						td
 							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership.ZooId}
+						td
+							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership.membership_expiration}

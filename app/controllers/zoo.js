@@ -65,11 +65,11 @@ router.get('/:id', function (req, res, next) {
 
 router.get('/', function (req, res, next) {
   db['Zoo'].findAll({ order: 'id ASC' }).success(function (Zoos) {
-    // for (var i = 0, len = Zoos.length; i < len; i++) {
-    //   Zoos[i].opening_time = moment(new Date(Zoos[i].opening_time).getTime()).format('h:mm:ss a');
-    //   Zoos[i].closing_time = moment(Zoos[i].closing_time).format('h:mm:ss a');
-    // }
-    res.render('zoo/view-zoos', { Zoos: Zoos, user: req.session.username });
+  for (var i = 0, len = Zoos.length; i < len; i++) {
+    Zoos[i].opening_time = moment(Zoos[i].opening_time, 'HH:mm:ss').format('hh:mm A');
+    Zoos[i].closing_time = moment(Zoos[i].closing_time, 'HH:mm:ss').format('hh:mm A');
+  }
+  res.render('zoo/view-zoos', { Zoos: Zoos, user: req.session.username });
   });
 });
 

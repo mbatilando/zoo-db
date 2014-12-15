@@ -22,5 +22,6 @@ block content
 				input(name="exhibitId", type="number", placeholder="1" value="#{show.id}")
 				input(type="hidden" name="_entity" value="show")
 				input(type="hidden" name="_id" value="#{show.id}")
-				button(type="submit" class="pure-button pure-button-primary") Save
-		button(id="delete" class="pure-button button-error") Delete
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete
