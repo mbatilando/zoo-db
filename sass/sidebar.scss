@@ -1,0 +1,19 @@
+.sidebar {
+	.pure-menu {
+		background: none;
+		border: none;
+	}
+
+	.pure-menu-heading {
+		font-weight: bold;
+		color: white;
+	}
+
+	.pure-menu ul li a {
+		color: white;
+
+		&:hover {
+			background: #525353;
+		}
+	}
+}

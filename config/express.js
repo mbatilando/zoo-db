@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
+var session = require('express-session');
 var sass = require('node-sass-middleware');
 
 module.exports = function(app, config) {
@@ -28,10 +29,21 @@ module.exports = function(app, config) {
   app.use(bodyParser.urlencoded({
     extended: true
   }));
+  var sess = {
+    key: 'zooDb',
+    secret: 'vF24(#0ag_a54$zh{41;S#0vyM?{V4',
+    cookie: { maxAge: 6000000 },
+    resave: true,
+    saveUninitialized: true
+  };
+  app.use(session(sess));
   app.use(cookieParser());
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
+
+
+
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {

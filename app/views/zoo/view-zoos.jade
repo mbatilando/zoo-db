@@ -1,28 +1,46 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th name
-				th phone
-				th street
-				th city
-				th state
-				th zip
-				th country
-				th opening_time
-				th closing_time
-		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td New York Zoo
-				td 9-(546)183-2380
-				td Stuart
-				td Flushing
-				td NY
-				td 11355
-				td United States
-				td 2014-08-15 12:22:44-07
-				td 2013-11-14 23:35:13-08
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th name
+					th phone
+					th street
+					th city
+					th state
+					th zip
+					th country
+					th opening_time
+					th closing_time
+			tbody
+				each zoo, index in Zoos
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.id}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.name}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.phone}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.street}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.city}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.state}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.zip}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.country}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.opening_time}
+						td
+							a(href="/zoo/#{zoo.id}") #{zoo.closing_time}

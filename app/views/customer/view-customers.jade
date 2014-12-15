@@ -1,16 +1,28 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th First Name
-				th Last Name
-				th Phone
-		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td Mari
-				td Batilando
-				td (123) 456-7890
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th First Name
+					th Last Name
+					th Phone
+			tbody
+				each customer, index in ZooCustomers
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/customer/#{customer.id}") #{customer.id}
+						td
+							a(href="/customer/#{customer.id}") #{customer.first_name}
+						td
+							a(href="/customer/#{customer.id}") #{customer.last_name}
+						td
+							a(href="/customer/#{customer.id}") #{customer.phone}

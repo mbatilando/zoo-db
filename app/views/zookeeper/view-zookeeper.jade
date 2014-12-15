@@ -1,0 +1,44 @@
+extends ../layout
+
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
+block content
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Zookeeper Form
+			fieldset
+				label(for="first_name") First Name
+				input(name="first_name", type="text", placeholder="John" value="#{zookeeper.first_name}")
+				label(for="last_name") Last Name
+				input(name="last_name", type="text", placeholder="Doe" value="#{zookeeper.last_name}")
+				label(for="phone") Phone
+				input(name="phone" type="text" placeholder="(510) 432-8970" value="#{zookeeper.phone}")
+				label(for="ZooId") Zoo
+				select(name="ZooId")
+					each zoo in zoos
+						option(value="#{zoo.id}") #{zoo.name}
+				fieldset(name="work")
+					<legend>Work Days</legend>
+					label Monday 
+						input(name="work_days" value="Mo" type="checkbox")
+					label Tuesday 
+						input(name="work_days" value="Tu" type="checkbox")
+					label Wednesday 
+						input(name="work_days" value="Wed" type="checkbox")
+					label Thursday 
+						input(name="work_days" value="Thur" type="checkbox")
+					label Friday 
+						input(name="work_days" value="Fri" type="checkbox")
+					label Saturday 
+						input(name="work_days" value="Sat" type="checkbox")
+					label Sunday 
+						input(name="work_days" value="Sun" type="checkbox")
+				input(type="hidden" name="_entity" value="zookeeper")
+				input(type="hidden" name="_id" value="#{zookeeper.id}")
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete

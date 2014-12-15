@@ -1,0 +1,12 @@
+block extraCss
+	link(rel='stylesheet', href='/css/header.css')
+
+div(class="header pure-menu pure-menu-open pure-menu-horizontal")
+	div(class="brand")
+		img(class="brand-icon" src="/img/brand.png")
+		span(class="brand-text") ZooDB
+	ul(class="options")
+		li
+			span(class="username") #{user}
+		li
+			a(href="/authentication/logout") Logout

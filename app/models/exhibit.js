@@ -7,7 +7,8 @@ module.exports = function (sequelize, DataTypes) {
 	    associate: function(models) {
 	      Exhibit.hasMany(models.Show);
 	      Exhibit.hasMany(models.Animal);
-	    }
+	    },
+      timestamps: false
 	}
   });
 

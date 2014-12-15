@@ -1,16 +1,28 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th scientific_name
-				th common_name
-				th description
-		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td Antilocapra americana
-				td antelope
-				td neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th scientific_name
+					th common_name
+					th description
+			tbody
+				each specie, index in Species
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/species/#{specie.id}") #{specie.id}
+						td
+							a(href="/species/#{specie.id}") #{specie.scientific_name}
+						td
+							a(href="/species/#{specie.id}") #{specie.common_name}
+						td
+							a(href="/species/#{specie.id}") #{specie.description}

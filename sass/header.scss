@@ -1,0 +1,45 @@
+.pure-menu.header {
+	background: #525353;
+	overflow: auto;
+	height: 50px;
+
+	.brand {
+		height: 100%;
+		float: left;
+	}
+
+	.brand-text {
+		position: relative;
+		left: 20px;
+		color: white;
+		font-weight: bold;
+	}
+
+	.brand-icon {
+		height: 33px;
+		position: relative;
+		top: 11px;
+		left: 10px;
+	}
+
+	.options {
+		float: right;
+	}
+
+	.username {
+		font-weight: bold;
+		color: white;
+	}
+
+	.options li {
+		padding: 7px;
+		color: white;
+
+		a {
+			color: white;
+			&:hover {
+				background: none;
+			}
+		}
+	}
+}

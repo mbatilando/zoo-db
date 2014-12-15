@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
   var Species = sequelize.define('Species', {
     scientific_name: DataTypes.STRING,
     common_name: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING(1000)
   }, {
       classMethods: {
         associate: function(models) {
@@ -11,7 +11,8 @@ module.exports = function (sequelize, DataTypes) {
           	foreignKey: 'SpeciesId'
           });
         }
-      }
+      },
+      timestamps: false
     }
   );
 

@@ -1,14 +1,28 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th Zoo CustomerId
-				th ZooId
-		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td 4
-				td 5
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th Zoo CustomerId
+					th ZooId
+					th membership_expiration
+			tbody
+				each zooMembership, index in ZooMemberships
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership.id}
+						td
+							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership['Zoo CustomerId']}
+						td
+							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership.ZooId}
+						td
+							a(href="/zoo-membership/#{zooMembership.id}") #{zooMembership.membership_expiration}

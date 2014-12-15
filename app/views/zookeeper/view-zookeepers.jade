@@ -1,20 +1,34 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th first_name
-				th last_name
-				th phone
-				th work_days
-				th ZooId
-		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td Jacqueline
-				td Cunningham
-				td 4-(631)052-7586
-				td Sa
-				td 3
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th first_name
+					th last_name
+					th phone
+					th work_days
+					th ZooId
+			tbody
+				each zooKeeper, index in Zookeepers
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/zookeeper/#{zooKeeper.id}") #{zooKeeper.id}
+						td
+							a(href="/zookeeper/#{zooKeeper.id}") #{zooKeeper.first_name}
+						td
+							a(href="/zookeeper/#{zooKeeper.id}") #{zooKeeper.last_name}
+						td
+							a(href="/zookeeper/#{zooKeeper.id}") #{zooKeeper.phone}
+						td
+							a(href="/zookeeper/#{zooKeeper.id}") #{zooKeeper.work_days}
+						td
+							a(href="/zookeeper/#{zooKeeper.id}") #{zooKeeper.ZooId}

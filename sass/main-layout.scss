@@ -1,0 +1,13 @@
+.main {
+	display: flex;
+	flex-flow: row;
+
+	.sidebar {
+		flex: 0 0 225px;
+		background: #b4ad9e;
+	}
+
+	.content {
+		flex: 1 0 500px;
+	}
+}

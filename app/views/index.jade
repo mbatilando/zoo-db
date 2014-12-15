@@ -1,40 +1,7 @@
 extends layout
 
-block content
-	div(class="pure-menu pure-menu-open")
-		a(class="pure-menu-heading") Zoo DB
-		ul
-			li(class="pure-menu-heading") Add
-			li
-				a(href="/add/zoo") Zoo
-			li
-				a(href="/add/animal") Animal
-			li
-				a(href="/add/customer") Customer
-			li
-				a(href="/add/exhibit") Exhibit
-			li
-				a(href="/add/show") Show
-			li
-				a(href="/add/zookeeper") Zookeeper
-			li
-				a(href="/add/zoo-membership") Zoo Membership
-			li
-				a(href="/add/species") Species
-			li(class="pure-menu-heading") View
-			li
-				a(href="/view/zoos") Zoo
-			li
-				a(href="/view/animals") Animal
-			li
-				a(href="/view/customers") Customer
-			li
-				a(href="/view/exhibits") Exhibit
-			li
-				a(href="/view/shows") Show
-			li
-				a(href="/view/zookeepers") Zookeeper
-			li
-				a(href="/view/zoo-memberships") Zoo Membership
-			li
-				a(href="/view/species") Species
+block header
+	include header/header.jade
+
+block sidebar
+	include sidebar/sidebar.jade

@@ -1,14 +1,25 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	table(class="pure-table")
-		thead
-			tr
-				th id
-				th Name
-				th ZookeeperId
-		tbody
-			tr(class="pure-table-odd")
-				td 1
-				td The Sahara
-				td 3
+	div(class="content")
+		table(class="pure-table custom-table")
+			thead
+				tr
+					th id
+					th name
+					th ZookeeperId
+			tbody
+				each exhibit, index in Exhibits
+					tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+						td
+							a(href="/exhibit/#{exhibit.id}") #{exhibit.id}
+						td
+							a(href="/exhibit/#{exhibit.id}") #{exhibit.name}
+						td
+							a(href="/exhibit/#{exhibit.id}") #{exhibit.ZookeeperId}

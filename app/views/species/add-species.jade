@@ -1,13 +1,20 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form species-form pure-form pure-form-stacked")
-		h1 Species Form
-		fieldset
-			label(for="scientific-name") Scientific Name
-			input(name="scientific-name", type="text", placeholder="Mellivora Capensis")
-			label(for="common-name") Common Name
-			input(name="common-name", type="text", placeholder="Badger")
-			label(for="description") Description
-			textarea(name="description" placeholder="A species of mustelid...")
-		button(type="submit" class="pure-button pure-button-primary") Create Species
+	div(class="content")
+		form(class="custom-form species-form pure-form pure-form-stacked" action="/species/" method="POST")
+			h1 Species Form
+			fieldset
+				label(for="scientific_name") Scientific Name
+				input(name="scientific_name", type="text", placeholder="Mellivora Capensis")
+				label(for="common_name") Common Name
+				input(name="common_name", type="text", placeholder="Badger")
+				label(for="description") Description
+				textarea(name="description" placeholder="A species of mustelid...")
+			button(type="submit" class="pure-button pure-button-primary") Create Species

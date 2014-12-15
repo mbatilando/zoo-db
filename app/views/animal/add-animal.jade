@@ -1,25 +1,38 @@
 extends ../layout
 
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
 block content
-	form(class="custom-form animal-form pure-form pure-form-stacked")
-		h1 Animal Form
-		fieldset
-			label(for="given-name") Given Name
-			input(name="given-name", type="text", placeholder="Mr. Whiskers")
-			label(for="weight") Weight (lbs.)
-			input(name="weight", type="number", placeholder="135")
-			label(for="picture") Picture URL
-			input(name="picture", type="text", placeholder="http://coolpicture.com/123abc")
-			label(for="birth-date") Birth Date
-			input(name="birth-date", type="text", placeholder="November 10, 1992")
-			label(for="gender") Gender
-			select(name="gender")
-				option Male
-				option Female
-			label(for="species") Species
-			select(name="species")
-				option Obuko Sabialis
-			label(for="exhibit") Exhibit
-			select(name="exhibit")
-				option Cool Exhibit
-		button(type="submit" class="pure-button pure-button-primary") Create Animal
+	div(class="content")
+			form(class="custom-form animal-form pure-form pure-form-stacked" action="/animal/" method="POST")
+				h1 Animal Form
+				fieldset
+					label(for="given_name") Given Name
+					input(name="given_name", type="text", placeholder="Mr. Whiskers")
+					label(for="weight") Weight (lbs.)
+					input(name="weight", type="number", placeholder="135")
+					label(for="picture_url") Picture URL
+					input(name="picture_url", type="text", placeholder="http://coolpicture.com/123abc")
+					label(for="birth_date") Birth Date
+					input(class="datepicker",
+						  name="birth_date",
+						  type="text",
+						  placeholder="November 10, 1992")
+					label(for="gender") Gender
+					select(name="gender")
+						option(value="male") Male
+						option(value="female") Female
+					input(type="hidden" name="_method" value="POST")
+					label(for="ExhibitId") Exhibit
+					select(name="ExhibitId")
+						each exhibit in exhibits
+							option(value="#{exhibit.id}") #{exhibit.name}
+					label(for="SpeciesId") Species
+					select(name="SpeciesId")
+						each specie in species
+							option(value="#{specie.id}") #{specie.scientific_name}
+				button(type="submit" class="pure-button pure-button-primary") Create Animal

@@ -1,0 +1,24 @@
+extends ../layout
+
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
+block content
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Species Form
+			fieldset
+				label(for="scientific_name") Scientific Name
+				input(name="scientific_name", type="text", placeholder="Mellivora Capensis" value="#{specie.scientific_name}")
+				label(for="common_name") Common Name
+				input(name="common_name", type="text", placeholder="Badger" value="#{specie.common_name}")
+				label(for="description") Description
+				textarea(name="description" placeholder="A species of mustelid...") #{specie.description}
+				input(type="hidden" name="_entity" value="species")
+				input(type="hidden" name="_id" value="#{specie.id}")
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete

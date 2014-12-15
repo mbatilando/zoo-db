@@ -9,7 +9,8 @@ module.exports = function (sequelize, DataTypes) {
         associate: function(models) {
           ZooCustomer.hasMany(models.ZooMembership);
         }
-      }
+      },
+      timestamps: false
     }
   );
 

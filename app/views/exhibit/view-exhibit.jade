@@ -1,0 +1,24 @@
+extends ../layout
+
+block header
+	include ../header/header
+
+block sidebar
+	include ../sidebar/sidebar
+
+block content
+	div(class="content")
+		form(class="custom-form update-form pure-form pure-form-stacked")
+			h1 Exhibit Form
+			fieldset
+				label(for="name") Name
+				input(name="name", type="text", placeholder="Awesome Exhibit" value="#{exhibit.name}")
+				label(for="zookeeperId") Zookeeper
+				select(name="zookeeperId")
+					each zookeeper in zookeepers
+						option(value="#{zookeeper.id}") #{zookeeper.first_name} #{zookeeper.last_name}
+				input(type="hidden" name="_entity" value="exhibit")
+				input(type="hidden" name="_id" value="#{exhibit.id}")
+		div(class="form-options")
+			button(id="save" type="submit" class="pure-button pure-button-primary") Save
+			button(id="delete" class="pure-button button-error") Delete
