@@ -15,7 +15,7 @@ module.exports = function (app) {
 
 router.get('/add', function (req, res, next) {
   db['Exhibit'].findAll().success(function (exhibits) {
-    db['Species'].findAll({order: 'common_name DESC'}).success(function (species) {
+    db['Species'].findAll({order: 'common_name ASC'}).success(function (species) {
       res.render('animal/add-animal', { user: req.session.username, exhibits: exhibits, species: species });
     });
   });
@@ -23,7 +23,7 @@ router.get('/add', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
   db['Exhibit'].findAll().success(function (exhibits) {
-    db['Species'].findAll({order: 'common_name DESC'}).success(function (species) {
+    db['Species'].findAll({order: 'common_name ASC'}).success(function (species) {
       db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
         res.render('animal/view-animal', { animal: animal, user: req.session.username, exhibits: exhibits, species: species });
       });
