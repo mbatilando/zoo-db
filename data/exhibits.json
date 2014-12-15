@@ -1,0 +1,76 @@
+{
+    "Africa Rocks": [
+        "Honey Badger",
+        "Lynx and Bobcat",
+        "Meerkat",
+        "Snow Leopard"
+    ],
+    "Asian Passage": [
+        "Andean Bear",
+        "Porcupine",
+        "Spotted Hyena",
+        "Sun Bear"
+    ],
+    "Australian Outback": [
+        "Camel",
+        "Koala",
+        "Laughing Kookaburra",
+        "Tasmanian Devil",
+        "Wombat"
+    ],
+    "Discovery Outpost": [
+        "Anaconda",
+        "Boa",
+        "Cobra",
+        "Galápagos Tortoise",
+        "Hummingbird",
+        "Komodo Dragon",
+        "Macaw",
+        "Naked Mole-rat",
+        "Rattlesnake",
+        "Turtle & Tortoise"
+    ],
+    "Elephant Odyssey": [
+        "California Condor",
+        "Capybara",
+        "Dung Beetle",
+        "Elephant",
+        "Jaguar",
+        "Lion",
+        "Secretary Bird"
+    ],
+    "Lost Forest": [
+        "Bonobo",
+        "Flamingo",
+        "Gorilla",
+        "Harpy Eagle",
+        "Hippo",
+        "Mandrill",
+        "Monkey",
+        "Okapi",
+        "Orangutan",
+        "Otter",
+        "Pygmy Hippopotamus",
+        "Pygmy Marmoset",
+        "Tapir",
+        "Tiger"
+    ],
+    "Northern Frontier": [
+        "Mountain Lion",
+        "Polar Bear",
+        "Reindeer",
+        "Wolf",
+        "Zebra"
+    ],
+    "Panda Canyon": [
+        "Giant Panda",
+        "Red Panda",
+        "Takin"
+    ],
+    "Urban Jungle": [
+        "Cheetah",
+        "Clouded Leopard",
+        "Giraffe",
+        "Rhinoceros"
+    ]
+}
