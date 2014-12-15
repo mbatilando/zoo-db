@@ -24,8 +24,8 @@ def parse_species_page(url, names):
   species_info["scientific_name"] = (
       names[common_name] if (common_name in names) else
       get_scientific_name(common_name, panel_info))
-  species_info["description"] = (
-      soup.find("div", class_="collapse-text-text").find("p").text.strip())
+  species_info["description"] = (soup.find("div", class_="collapse-text-text")
+      .find("p").text.strip().replace("\n", " "))
   return species_info
 
 def populate_panel_info(soup, panel_id, panel_info):
