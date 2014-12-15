@@ -18,8 +18,8 @@ def parse_species_page(url, names):
   panel_info = {}
   populate_panel_info(soup, "mini-panel-scientific_classification", panel_info)
   populate_panel_info(soup, "mini-panel-quick_facts", panel_info)
-  common_name = re.sub(
-          r' \([^)]*\)', '', soup.find("span", {"class": "titleAnimal"}).text)
+  common_name = re.sub(r' \([^)]*\)', '',
+          soup.find("span", {"class": "titleAnimal"}).text.replace("'", "''"))
   species_info["common_name"] = common_name
   species_info["scientific_name"] = (
       names[common_name] if (common_name in names) else
