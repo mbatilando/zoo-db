@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib import urlopen
-import os
+import os, re, unicodedata
 
 NAMES_FILE = "species.csv"
 
@@ -18,13 +18,15 @@ def parse_species_page(url, names):
   panel_info = {}
   populate_panel_info(soup, "mini-panel-scientific_classification", panel_info)
   populate_panel_info(soup, "mini-panel-quick_facts", panel_info)
-  common_name = soup.find("span", {"class": "titleAnimal"}).text
+  common_name = re.sub(
+          r' \([^)]*\)', '', soup.find("span", {"class": "titleAnimal"}).text)
   species_info["common_name"] = common_name
   species_info["scientific_name"] = (
       names[common_name] if (common_name in names) else
       get_scientific_name(common_name, panel_info))
-  species_info["description"] = soup.find(
-      "div", {"class": "collapse-text-text"}).find("p").text.strip()
+  species_info["description"] = (unicodedata.normalize("NFKD",
+      soup.find("div", class_="collapse-text-text").find("p").text.strip())
+      .encode('ascii','ignore'))
   return species_info
 
 def populate_panel_info(soup, panel_id, panel_info):

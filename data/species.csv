@@ -1,6 +1,6 @@
 Agouti,Dasyprocta fuliginosa
 Anaconda,Eunectes murinus
-Andean (Spectacled) Bear,Tremarctos ornatus
+Andean Bear,Tremarctos ornatus
 Andean Condor,Vultur gryphus
 Ant,Formica rufa
 Antelope,Raphicerus campestris
@@ -60,7 +60,7 @@ Guenon,Erythrocebus patas
 Harpy Eagle,Harpia harpyja
 Hedgehog,Atelerix albiventris
 Hippo,Hippopotamus amphibious
-Honey Badger (Ratel),Mellivora capensis
+Honey Badger,Mellivora capensis
 Hornbill,Bucorvus leadbeateri
 Hummingbird,Patagona gigas
 Ibis,Pseudibis gigantea
@@ -90,7 +90,7 @@ Mantella,Mantella aurantiaca
 Marsupial,Macropus rufus
 Meerkat,Suricata suricatta
 Monkey,Mandrillus sphinx
-Mountain Lion (Puma, Cougar),Puma concolor
+Mountain Lion,Puma concolor
 Naked Mole-rat,Heterocephalus glaber
 Nile Lechwe,Kobus megaceros
 Ocelot,Leopardus pardalis
@@ -159,7 +159,7 @@ Two-Toed Sloth,Choloepus hoffmanni
 Vulture,Gyps himalayensis
 Warthog,Phacochoerus africanus
 Wild Cattle,Bos bison
-Wild Swine (Pigs & Hogs),Hylochoerus meinertzhageni
+Wild Swine,Sus scrofa
 Wolf,Canis lupus
 Wombat,Vombatus ursinus
 Zebra,Equus quagga
