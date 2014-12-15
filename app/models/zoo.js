@@ -8,8 +8,8 @@ module.exports = function (sequelize, DataTypes) {
     state: DataTypes.STRING,
     zip: DataTypes.STRING,
     country: DataTypes.STRING,
-    opening_time: DataTypes.DATE,
-    closing_time: DataTypes.DATE
+    opening_time: DataTypes.STRING,
+    closing_time: DataTypes.STRING
   }, {
       classMethods: {
         associate: function(models) {
