@@ -15,7 +15,7 @@ block content
 					select(name="ZooId")
 						each zoo in zoos
 							option(value="#{zoo.id}") #{zoo.name}
-				label(for="Zoo CustomerId") Zoo Customer ID
+				label(for="Zoo CustomerId") Zoo Customer
 					select(name="Zoo CustomerId")
 						each zooCustomer in zooCustomers
 							option(value="#{zooCustomer.id}") #{zooCustomer.first_name} #{zooCustomer.last_name}
