@@ -14,19 +14,20 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-  console.log(db);
   db['Exhibit'].findAll().success(function (exhibits) {
-    var exhibits = exhibits;
-    db['Species'].findAll().success(function (species) {
-      var species = species;
+    db['Species'].findAll({order: 'common_name DESC'}).success(function (species) {
       res.render('animal/add-animal', { user: req.session.username, exhibits: exhibits, species: species });
     });
   });
 });
 
 router.get('/:id', function (req, res, next) {
-  db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
-    res.render('animal/view-animal', { animal: animal, user: req.session.username });
+  db['Exhibit'].findAll().success(function (exhibits) {
+    db['Species'].findAll({order: 'common_name DESC'}).success(function (species) {
+      db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
+        res.render('animal/view-animal', { animal: animal, user: req.session.username, exhibits: exhibits, species: species });
+      });
+    });
   });
 });
 
@@ -37,7 +38,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  console.log(req.body);
   db['Animal'].create(req.body).success(function (animal) {
     db['Animal'].findAll().success(function (animals) {
       req.dataProcessed = animals;
