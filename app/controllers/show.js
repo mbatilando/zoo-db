@@ -8,12 +8,16 @@ module.exports = function (app) {
 
 
 router.get('/add', function (req, res, next) {
-  res.render('show/add-show', {user: req.session.username});
+  db['Exhibit'].findAll().success(function (exhibits) {
+    res.render('show/add-show', {user: req.session.username, exhibits: exhibits});
+  });
 });
 
 router.get('/:id', function (req, res, next) {
-  db['Show'].find({ where: { id: req.params.id }}).success(function (show) {
-    res.render('show/view-show', { show: show, user: req.session.username });
+  db['Exhibit'].findAll().success(function (exhibits) {
+    db['Show'].find({ where: { id: req.params.id }}).success(function (show) {
+      res.render('show/view-show', { show: show, user: req.session.username, exhibits: exhibits });
+    });
   });
 });
 

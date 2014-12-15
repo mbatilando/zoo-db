@@ -13,13 +13,36 @@ block content
 			fieldset
 				label(for="name") Name
 				input(name="name", type="text", placeholder="My Awesome Show" value="#{show.name}")
-				//- label(for="time") Time
-				//- select(name="time")
-				//- 	option 12:00 AM
-				//- 	option 1:00 AM
-				//- 	option 2:00 AM
-				label(for="exhibitId") ExhibitId
-				input(name="exhibitId", type="number", placeholder="1" value="#{show.id}")
+				label(for="time") Time
+				select(name="time")
+					option(value="00:00:00") 12:00 AM
+					option(value="01:00:00") 1:00 AM
+					option(value="02:00:00") 2:00 AM
+					option(value="03:00:00") 3:00 AM
+					option(value="04:00:00") 4:00 AM
+					option(value="05:00:00") 5:00 AM
+					option(value="06:00:00") 6:00 AM
+					option(value="07:00:00") 7:00 AM
+					option(value="08:00:00") 8:00 AM
+					option(value="09:00:00" selected) 9:00 AM
+					option(value="10:00:00") 10:00 AM
+					option(value="11:00:00") 11:00 AM
+					option(value="12:00:00") 12:00 PM
+					option(value="13:00:00") 01:00 PM
+					option(value="14:00:00") 02:00 PM
+					option(value="15:00:00") 03:00 PM
+					option(value="16:00:00") 04:00 PM
+					option(value="17:00:00") 05:00 PM
+					option(value="18:00:00") 06:00 PM
+					option(value="19:00:00") 07:00 PM
+					option(value="20:00:00") 08:00 PM
+					option(value="21:00:00") 09:00 PM
+					option(value="22:00:00") 10:00 PM
+					option(value="23:00:00") 11:00 PM
+				label(for="ExhibitId") Exhibit
+				select(name="ExhibitId")
+					each exhibit in exhibits
+						option(value="#{exhibit.id}") #{exhibit.name}
 				input(type="hidden" name="_entity" value="show")
 				input(type="hidden" name="_id" value="#{show.id}")
 		div(class="form-options")
