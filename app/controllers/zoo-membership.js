@@ -7,7 +7,13 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-  res.render('zoo-membership/add-zoo-membership', {user: req.session.username});
+  db['Zoo'].findAll().success(function (zoos) {
+    var zoos = zoos;
+    db['Zoo Customer'].findAll().success(function (zooCustomers) {
+      var zooCustomers = zooCustomers;
+      res.render('zoo-membership/add-zoo-membership', {user: req.session.username, zoos: zoos, zooCustomers: zooCustomers});
+    });
+  });
 });
 
 router.get('/:id', function (req, res, next) {

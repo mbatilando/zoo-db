@@ -18,10 +18,21 @@ block content
 					label(for="picture_url") Picture URL
 					input(name="picture_url", type="text", placeholder="http://coolpicture.com/123abc")
 					label(for="birth-date") Birth Date
-					input(name="birth-date", type="text", placeholder="November 10, 1992")
+					input(class="datepicker",
+						  name="birth-date",
+						  type="text",
+						  placeholder="November 10, 1992")
 					label(for="gender") Gender
 					select(name="gender")
 						option(value="male") Male
 						option(value="female") Female
 					input(type="hidden" name="_method" value="POST")
+					label(for="ExhibitId") Exhibit
+					select(name="ExhibitId")
+						each exhibit in exhibits
+							option(value="#{exhibit.id}") #{exhibit.name}
+					label(for="SpeciesId") Species
+					select(name="SpeciesId")
+						each specie in species
+							option(value="#{specie.id}") #{specie.scientific_name}
 				button(type="submit" class="pure-button pure-button-primary") Create Animal

@@ -7,7 +7,10 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-  res.render('zookeeper/add-zookeeper', {user: req.session.username});
+  db['Zoo'].findAll().success(function (zoos) {
+    var zoos = zoos;
+    res.render('zookeeper/add-zookeeper', {user: req.session.username, zoos: zoos});
+  });
 });
 
 router.get('/:id', function (req, res, next) {
@@ -23,6 +26,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  req.body.work_days = req.body.work_days.join(' ');
+  console.log(req.body);
   db['Zookeeper'].create(req.body).success(function (zookeeper) {
     db['Zookeeper'].findAll().success(function (zookeepers) {
       req.dataProcessed = zookeepers;

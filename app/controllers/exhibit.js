@@ -9,7 +9,6 @@ module.exports = function (app) {
 
 router.get('/add', function (req, res, next) {
   db['Zookeeper'].findAll().success(function (zookeepers) {
-    console.log(zookeepers);
     res.render('exhibit/add-exhibit', { zookeepers: zookeepers, user: req.session.username });
   });
 });

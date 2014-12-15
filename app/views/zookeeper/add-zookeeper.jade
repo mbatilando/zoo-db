@@ -17,19 +17,18 @@ block content
 				input(name="last_name", type="text", placeholder="Doe")
 				label(for="phone") Phone
 				input(name="phone" type="text" placeholder="(510) 432-8970")
-				//- label(for="zoo") Zoo
-				//- select(name="zoo" type="text")
-				//- 	option My Awesome Zoo
+				label(for="ZooId") Zoo
+				select(name="ZooId" type="text")
+					each zoo in zoos
+						option(value="#{zoo.id}") #{zoo.name}
 				//- fieldset(name="exhibits")
 				//- 	<legend>Exhibits</legend>
 				//- 	label(for="Cool Exhibit") Cool Exhibit 
 				//- 		input(name="Cool Exhibit" type="checkbox")
-				//- fieldset(name="work")
-				//- 	<legend>Work Days</legend>
-				//- 	label(for="monday pure-checkbox") Monday 
-				//- 		input(name="monday" type="checkbox")
-				//- 	label(for="tuesday pure-checkbox") Tuesday 
-				//- 		input(name="tuesday pure-checkbox" type="checkbox")
-				//- 	label(for="wednesday pure-checkbox") Wednesday 
-				//- 		input(name="wednesday pure-checkbox" type="checkbox")
+				fieldset(name="work")
+					<legend>Work Days</legend>
+					label(for="pure-checkbox") Monday 
+						input(name="work_days" value="Mo" type="checkbox")
+					label(for="pure-checkbox") Tuesday 
+						input(name="work_days" value="Tu" type="checkbox")
 			button(type="submit" class="pure-button pure-button-primary") Create Zookeeper

@@ -14,7 +14,14 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
-  res.render('animal/add-animal', { user: req.session.username });
+  console.log(db);
+  db['Exhibit'].findAll().success(function (exhibits) {
+    var exhibits = exhibits;
+    db['Species'].findAll().success(function (species) {
+      var species = species;
+      res.render('animal/add-animal', { user: req.session.username, exhibits: exhibits, species: species });
+    });
+  });
 });
 
 router.get('/:id', function (req, res, next) {
