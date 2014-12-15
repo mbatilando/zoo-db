@@ -1,17 +1,13 @@
 {
     "Africa Rocks": [
-        "Amur Leopard",
-        "Honey Badger (Ratel)",
-        "Lynx",
+        "Honey Badger",
+        "Lynx and Bobcat",
         "Meerkat",
-        "Peccary",
         "Snow Leopard"
     ],
     "Asian Passage": [
         "Andean Bear",
-        "Grizzly Bear",
-        "Indian Crested Porcupine",
-        "Lion-tailed Macaque",
+        "Porcupine",
         "Spotted Hyena",
         "Sun Bear"
     ],
@@ -25,16 +21,14 @@
     "Discovery Outpost": [
         "Anaconda",
         "Boa",
-        "Chinese Alligator",
+        "Cobra",
         "Galápagos Tortoise",
         "Hummingbird",
-        "King Cobra",
         "Komodo Dragon",
-        "Leaf-cutter Ant",
         "Macaw",
         "Naked Mole-rat",
         "Rattlesnake",
-        "Turtle & Terrapin"
+        "Turtle & Tortoise"
     ],
     "Elephant Odyssey": [
         "California Condor",
@@ -50,7 +44,7 @@
         "Flamingo",
         "Gorilla",
         "Harpy Eagle",
-        "Hippopotamus",
+        "Hippo",
         "Mandrill",
         "Monkey",
         "Okapi",
@@ -62,16 +56,14 @@
         "Tiger"
     ],
     "Northern Frontier": [
-        "Arctic Fox",
-        "Maned Wolf",
         "Mountain Lion",
         "Polar Bear",
         "Reindeer",
+        "Wolf",
         "Zebra"
     ],
     "Panda Canyon": [
         "Giant Panda",
-        "Mang Mountain Viper",
         "Red Panda",
         "Takin"
     ],
