@@ -68,7 +68,7 @@ router.get('/api/:zooId', function (req, res, next) {
           }
         }
       }
-      db['Zoo'].find({where: {id: req.params.id}}).success(function (dZoo) {
+      db['Zoo'].find({where: {id: req.params.zooId}}).success(function (dZoo) {
         zoo.name = dZoo.name;
         res.json(zoo);
       });
