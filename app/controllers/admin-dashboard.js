@@ -57,6 +57,13 @@ router.get('/api/:zooId', function (req, res, next) {
             }
           }
         }
+        for (var k = 0, kLen = origResult.length; k < kLen; k++) {
+          if (zoo.children[i].children[k].name === origResult[k].name) {
+            if (_.findIndex(zoo.children[i].children[k].children, { name: origResult[j].common_name }) === -1) {
+              zoo.children[i].children[k].children.push({ name: origResult[k].common_name, children: []});
+            }
+          }
+        }
       }
 
       // for(i = 0, len = zoo.children)
