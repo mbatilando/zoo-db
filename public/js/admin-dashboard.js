@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 	$.ajax({
 		type: 'GET',
-		url: '/admin/dashboard/api'+$('#zooId').html(),
+		url: '/admin/dashboard/api/'+$('#zooId').html(),
 		success: function (data) {
 		  data.x0 = 0;
 		  data.y0 = 0;
