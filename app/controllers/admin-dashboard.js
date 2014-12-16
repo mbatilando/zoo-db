@@ -52,7 +52,7 @@ router.get('/api/:zooId', function (req, res, next) {
         for (var j = 0, jLen = origResult.length; j < jLen; j++) {
           if (zoo.children[i].last_name === origResult[j].last_name) {
             // Check if exhibit hasn't been added yet
-            if (!_.contains(zoo.children[i].children, origResult[j].name)) {
+            if (_.findIndex(zoo.children[i].children, { name: origResult[j].name }) === -1) {
               zoo.children[i].children.push({ name: origResult[j].name, children: []})
             }
           }
