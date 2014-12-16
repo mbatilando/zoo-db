@@ -25,7 +25,6 @@ $(document).ready(function () {
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	function update(source) {
-		debugger
 		root = source;
 	  // Compute the flattened node list.
 	  var nodes = tree.nodes(root);
@@ -154,9 +153,8 @@ $(document).ready(function () {
 
 		  data.x0 = 0;
 		  data.y0 = 0;
-		  debugger;
 		  update(data);
-		  test.children.forEach(function(d) { click(d); });
+		  data.children.forEach(function(d) { click(d); });
 		}
 	});
 });
