@@ -48,7 +48,7 @@ router.get('/api/:zooId', function (req, res, next) {
       //   return elem;
       // });
       for (var i = 0, len = origResult.length; i < len; i++) {
-        if (_.findIndex(zoo.children, { name: origResult[i].name }) === -1) {
+        if (_.findIndex(zoo.children, { name: origResult[i].first_name + ' ' + origResult[i].last_name }) === -1) {
           zoo.children.push({ name: origResult[i].first_name + ' ' + origResult[i].last_name, children: []})
         }
       }
