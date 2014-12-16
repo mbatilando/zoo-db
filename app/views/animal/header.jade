@@ -5,11 +5,18 @@ div(class="header pure-menu pure-menu-open pure-menu-horizontal")
 	div(class="brand")
 		img(class="brand-icon" src="/img/brand.png")
 		span(class="brand-text") ZooDB
-	form(class="pure-form")
-		select(class="attribute")
-			option name
-		input(type="text" placeholder="Search Animal")
-		button(type="submit" class="pure-button pure-button-primary") Search
+		form(class="pure-form search-form")
+			select(id="attribute" class="attribute")
+				option(value="given_name") Name
+				option(value="weight") Weight
+				option(value="picture_url") Picture Url
+				option(value="gender") Gender
+				option(value="ExhibitId") Exhibit
+				option(value="species") Species
+			input(id="value" type="text" placeholder="Search Animal")
+			button(id="search"
+	               type="submit"
+	               class="pure-button pure-button-primary") Search
 	ul(class="options")
 		li
 			span(class="username") #{user}

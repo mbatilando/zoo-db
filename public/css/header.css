@@ -2,6 +2,7 @@
   background: #525353;
   overflow: auto;
   height: 50px;
+  position: relative;
 }
 .pure-menu.header .brand {
   height: 100%;
@@ -35,6 +36,26 @@
 }
 .pure-menu.header .options li a:hover {
   background: none;
+}
+.pure-menu.header .pure-form {
+  position: absolute;
+  top: 0;
+  left: 160px;
+  top: 7px;
+  height: 35px;
+}
+.pure-menu.header .pure-form select {
+  border: none;
+  margin-right: 15px;
+  height: 29px;
+}
+.pure-menu.header .pure-form #value {
+  height: 30px;
+  border: none;
+  margin-right: 15px;
+}
+.pure-menu.header .pure-form #search {
+  padding: 7px 15px;
 }
 
 /*# sourceMappingURL=header.css.map */

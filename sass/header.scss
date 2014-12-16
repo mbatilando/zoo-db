@@ -2,6 +2,7 @@
 	background: #525353;
 	overflow: auto;
 	height: 50px;
+	position: relative;
 
 	.brand {
 		height: 100%;
@@ -40,6 +41,30 @@
 			&:hover {
 				background: none;
 			}
+		}
+	}
+
+	.pure-form {
+		position: absolute;
+		top: 0;
+		left: 160px;
+		top: 7px;
+		height: 35px;
+
+		select {
+			border: none;
+			margin-right: 15px;
+			height: 29px;
+		}
+
+		#value {
+			height: 30px;
+			border: none;
+			margin-right: 15px;
+		}
+
+		#search {
+			padding: 7px 15px;
 		}
 	}
 }

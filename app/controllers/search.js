@@ -24,7 +24,6 @@ router.get('/', function (req, res, next) {
 
   var query = {};
   query[attribute] = value;
-  console.log(req.query);
 
   db[entity].findAll({ where: query }).success(function (results) {
     res.render('animal/search-animal-sub', { results: results });
