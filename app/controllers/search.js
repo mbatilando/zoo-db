@@ -25,9 +25,16 @@ router.get('/', function (req, res, next) {
   var query = {};
   query[attribute] = value;
 
-  db[entity].findAll({ where: query }).success(function (results) {
-    res.render('animal/search-animal-sub', { results: results });
-  });
+  if(attribute === 'species') {
+    db['Species'].find({ where: { common_name: req.query.value },
+                         include: [{ model: db['Animal']}]}).success(function (result) {
+                          res.render('animal/search-animal-sub', { results: result.animals });
+                      });
+  } else {
+    db[entity].findAll({ where: query }).success(function (results) {
+      res.render('animal/search-animal-sub', { results: results });
+    });
+  }
 
   // db['Animal'].findAll().success(function (results) {
   //   res.render('animal/search-animal-sub', { results: results });
@@ -44,7 +51,6 @@ router.get('/api/:animalId', function (req, res, next) {
       json.children.push({ name: result.common_name, children: [] })
       for (var i = 0, len = result.animals.length; i < len; i++) {
         if (result.animals[i].id == req.params.animalId) {
-          console.log(result.animals[i]);
           json.children[0].children.push({ id: result.animals[i].id, name: result.animals[i].given_name, icon: result.animals[i].picture_url })
           result.animals.splice(i, 1);
           break;

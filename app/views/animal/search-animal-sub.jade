@@ -33,8 +33,6 @@ html(lang='en')
                 th Weight
                 th Picture URL
                 th Gender
-                th Exhibit
-                th Species
             tbody
               each animal, index in results
                 tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
@@ -46,7 +44,3 @@ html(lang='en')
                     a(href="/animal/profile/#{animal.id}") #{animal.picture_url}
                   td
                     a(href="/animal/profile/#{animal.id}") #{animal.gender}
-                  td
-                    a(href="/animal/profile/#{animal.id}") #{animal.exhibit}
-                  td
-                    a(href="/animal/profile/#{animal.id}") #{animal.species}
