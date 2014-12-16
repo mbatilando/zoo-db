@@ -47,10 +47,10 @@ router.get('/api/:zooId', function (req, res, next) {
         elem.name = elem.full_name;
         return elem;
       });
-      for (var i = 0, len = zoo.children.length; i < len; i++) {
-        zoo.children[i].children = _.where(result, { last_name: zoo.children[i].last_name });
-        console.log(zoo.children[i].children);
-      }
+      // for (var i = 0, len = zoo.children.length; i < len; i++) {
+      //   zoo.children[i].children = _.where(result, { last_name: zoo.children[i].last_name });
+      //   console.log(zoo.children[i].children);
+      // }
 
       // for(i = 0, len = zoo.children)
       res.json(zoo);
