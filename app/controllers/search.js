@@ -34,6 +34,37 @@ router.get('/', function (req, res, next) {
   // });
 });
 
+router.get('/api/:animalId', function (req, res, next) {
+  var json = {};
+      json.children = [];
+
+  db['Animal'].find({ where: { id: req.params.animalId }}).success(function (animal) {
+    db['Species'].find({ where: { id: animal.SpeciesId },
+                         include: [{ model: db['Animal']}]}).success(function (result) {
+      json.children.push({ name: result.common_name, children: [] })
+      for (var i = 0, len = result.animals.length; i < len; i++) {
+        if (result.animals[i].id == req.params.animalId) {
+          json.children[0].children.push({ name: result.animals[i].given_name, icon: result.animals[i].picture_url })
+          break;
+        }
+      }
+      var randomIndex = getRandomArbitrary(0, result.animals.length);
+      json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url })
+      randomIndex = getRandomArbitrary(0, result.animals.length);
+      json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url })
+
+      db['Exhibit'].find({ where: { id: animal.ExhibitId }}).success(function (exhibit) {
+        json.name = exhibit.name;
+        res.json(json);
+      });
+    });
+  });
+});
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 
 function isEmpty(obj) {
     for(var prop in obj) {
