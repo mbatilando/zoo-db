@@ -54,3 +54,15 @@ INSERT INTO "Animals" VALUES(1052, 'Chantek', 260.00, 'http://i.imgur.com/94PRaC
 INSERT INTO "Animals" VALUES(1053, 'Camo', 280.00, 'http://i.imgur.com/nfl8FKc.jpg', '2010-03-21', 'male', 1001, 1148);
 INSERT INTO "Animals" VALUES(1054, 'Teddy', 630.00, 'http://i.imgur.com/718b9Zv.jpg', '2004-6-19', 'male', 1001, 1152);
 INSERT INTO "Animals" VALUES(1055, 'Delta', 480.00, 'http://i.imgur.com/dj3h2f1.jpg', '2006-08-10', 'female', 1001, 1152);
+INSERT INTO "Animals" VALUES(1056, 'Nicki', 365.00, 'http://i.imgur.com/qxc63FH.jpg', '2007-03-15', 'female', 1002, 1001);
+INSERT INTO "Animals" VALUES(1057, 'Manja', 20.00, 'http://i.imgur.com/xcKwZeL.jpg', '1996-10-06', 'male', 1002, 1015);
+INSERT INTO "Animals" VALUES(1058, 'Jessie', 17.00, 'http://i.imgur.com/dQbqczE.jpg', '2004-03-18', 'female', 1002, 1030);
+INSERT INTO "Animals" VALUES(1059, 'Speed', 495.00, 'http://i.imgur.com/c1KQLSB.jpg', '1933-3-13', 'male', 1002, 1046);
+INSERT INTO "Animals" VALUES(1060, 'Gerty', 489.00, 'http://i.imgur.com/nQBbMhE.jpg', '1941-09-20', 'male', 1002, 1046);
+INSERT INTO "Animals" VALUES(1061, 'Allen', 0.03, 'http://i.imgur.com/gwSGXbV.jpg', '2010-04-14', 'male', 1002, 1064);
+INSERT INTO "Animals" VALUES(1062, 'Costa', 0.02, 'http://i.imgur.com/LpVCh29.jpg', '2012-01-03', 'female', 1002, 1064);
+INSERT INTO "Animals" VALUES(1063, 'Anna', 0.02, 'http://i.imgur.com/zr9gd49.jpg', '2012-05-16', 'female', 1002, 1064);
+INSERT INTO "Animals" VALUES(1064, 'Sunny', 123.00, 'http://i.imgur.com/kPHphGg.jpg', '2000-11-10', 'male', 1002, 1076);
+INSERT INTO "Animals" VALUES(1065, 'Blue-Boy', 3.20, 'http://i.imgur.com/NQHI3vC.jpg', '1990-02-18', 'male', 1002, 1085);
+INSERT INTO "Animals" VALUES(1066, 'Klauber', 5.30, 'http://i.imgur.com/OBrZhoo.jpg', '2008-03-31', 'male', 1002, 1116);
+INSERT INTO "Animals" VALUES(1067, 'The General', 1100.00, 'http://i.imgur.com/T01giLy.jpg', '1990-12-01', 'male', 1002, 1156);
