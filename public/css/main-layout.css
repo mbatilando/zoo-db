@@ -9,5 +9,8 @@
 .main .content {
   flex: 1 0 500px;
 }
+.main .content .pure-table {
+  margin-left: 250px;
+}
 
 /*# sourceMappingURL=main-layout.css.map */
