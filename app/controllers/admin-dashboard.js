@@ -41,10 +41,18 @@ router.get('/api/:zooId', function (req, res, next) {
       zoo.children = _.uniq(result, 'full_name');
       console.log(zoo);
       zoo.children = zoo.children.map(function (elem) {
-        elem.children = [];
+        // var newElem = {};
+        // newElem.children = []; // Species
+        // newElem.name = elem.full_name;
         elem.name = elem.full_name;
         return elem;
       });
+      for (var i = 0, len = zoo.children.length; i < len; i++) {
+        zoo.children[i].children = _.where(result, { last_name: zoo.children[i].last_name });
+
+      }
+
+      // for(i = 0, len = zoo.children)
       res.json(zoo);
     })
 });
