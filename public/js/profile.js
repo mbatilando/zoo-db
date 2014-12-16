@@ -64,6 +64,7 @@ $(document).ready(function () {
 			.attr("height", "60px");
 
 			node.append("text")
+			.append("svg:a").attr("xlink:href", function(d){ return "/animal/profile/" + d.id })
 			.attr("dx", function(d) { return d.children ? -8 : 8; })
 			.attr("dy", 3)
 			.style("text-anchor", function(d) { return d.children ? "end" : "start"; })

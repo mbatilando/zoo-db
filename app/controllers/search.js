@@ -44,7 +44,8 @@ router.get('/api/:animalId', function (req, res, next) {
       json.children.push({ name: result.common_name, children: [] })
       for (var i = 0, len = result.animals.length; i < len; i++) {
         if (result.animals[i].id == req.params.animalId) {
-          json.children[0].children.push({ name: result.animals[i].given_name, icon: result.animals[i].picture_url })
+          console.log(result.animals[i]);
+          json.children[0].children.push({ id: result.animals[i].id, name: result.animals[i].given_name, icon: result.animals[i].picture_url })
           result.animals.splice(i, 1);
           break;
         }
@@ -52,7 +53,7 @@ router.get('/api/:animalId', function (req, res, next) {
       var counter = 1;
       while (result.animals.length && counter <= 3) {
         var randomIndex = getRandomArbitrary(0, result.animals.length);
-        json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url });
+        json.children[0].children.push({ id: result.animals[randomIndex].id, name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url });
         result.animals.splice(randomIndex, 1);
         counter++;
       }
