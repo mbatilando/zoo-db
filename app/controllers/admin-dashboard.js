@@ -33,7 +33,11 @@ router.get('/api/:zooId', function (req, res, next) {
   db.sequelize
     .query('SELECT "Zooes".name, "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name FROM "Zooes", "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zooes".id = ' + req.params.zooId + ' AND "Zooes".id = "Zookeepers"."ZooId" AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name;')
     .success(function (result) {
-      result = result.map(function (elem) { elem.full_name = elem.first_name + ' ' + elem.last_name });
+      result = result.map(function (elem) {
+        elem.full_name = elem.first_name + ' ' + elem.last_name;
+        return elem;
+      });
+      console.log(result);
       zoo.children = _.uniq(result, 'full_name');
       console.log(zoo);
       zoo.children = zoo.children.map(function (elem) {
