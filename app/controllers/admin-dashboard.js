@@ -58,15 +58,21 @@ router.get('/api/:zooId', function (req, res, next) {
           }
         }
         for (var j = 0, jLen = zoo.children[i].children.length; j < jLen; j++) {
-          console.log('YOOOOOOOOOOO00o0o0o0o0o0');
           for (var k = 0, kLen = origResult.length; k < kLen; k++) {
-            console.log('YOOOOOOOOOOO00o0o0o0o0o0');
-            console.log(zoo.children[i].children[j].name, origResult[k].name);
             if (zoo.children[i].children[j].name === origResult[k].name) {
-              console.log('??????????????????????????????');
               if (_.findIndex(zoo.children[i].children[j].children, { name: origResult[k].common_name }) === -1) {
-                console.log('ARTW%TSHSFTSHRHDGFHDGFYTSYTERYRTYRTYTRHGFHFGHGFHGFHFFH');
                 zoo.children[i].children[j].children.push({ name: origResult[k].common_name, children: []});
+              }
+            }
+          }
+        }
+        for (var j = 0, jLen = zoo.children[i].children.length; j < jLen; j++) {
+          for (var k = 0, kLen = zoo.children[i].children[j].children.length; k < kLen; k++) {
+            for(var l = 0, lLen = origResult.length; l < lLen; l++) {
+              if (zoo.children[i].children[j].children[k].name === origResult[k].common_name) {
+                if (_.findIndex(zoo.children[i].children[j].children[k].children, { name: origResult[l].given_name }) === -1) {
+                  zoo.children[i].children[j].children[k].children.push({ name: origResult[l].given_name, children: []});
+                }
               }
             }
           }
