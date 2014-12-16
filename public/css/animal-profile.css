@@ -9,9 +9,8 @@
   height: 250px;
 }
 .profile-container .profile-top .profile-picture-container {
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
+  max-height: 200px;
+  max-width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,6 +24,7 @@
   display: block;
   font-weight: bold;
   text-align: center;
+  font-size: 18px;
 }
 .profile-container .profile-top .species {
   font-style: italic;
