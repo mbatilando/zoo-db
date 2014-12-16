@@ -66,6 +66,61 @@ router.get('/:zooId', function (req, res, next) {
           .success(function (result) {
             values.numSpecies = result[0].count;
             console.log(values);
+            callback();
+          })
+    },
+    function (callback) {
+      db.sequelize
+          .query('SELECT COUNT(*) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
+          .success(function (result) {
+            values.numSpecies = result[0].count;
+            console.log(values);
+            callback();
+          })
+    },
+    function (callback) {
+      db.sequelize
+          .query('SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Shows" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Shows"."ExhibitId";')
+          .success(function (result) {
+            values.numShows = result[0].count;
+            console.log(values);
+            callback();
+          })
+    },
+    function (callback) {
+      db.sequelize
+          .query('SELECT AVG(subquery.count) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."ExhibitId") AS subquery;')
+          .success(function (result) {
+            values.avgNumAnimalsPerExhibit = result[0].count;
+            console.log(values);
+            callback();
+          })
+    },
+    function (callback) {
+      db.sequelize
+          .query('SELECT AVG(subquery.count) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
+          .success(function (result) {
+            values.avgNumAnimalsPerSpecies = result[0].count;
+            console.log(values);
+            callback();
+          })
+    },
+    function (callback) {
+      db.sequelize
+          .query('SELECT "Animals".given_name, "Species".common_name, "Animals".weight FROM "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Animals".weight LIMIT 1;')
+          .success(function (result) {
+            console.log(result);
+            values.animalLowestWeight = result[0].count;
+            console.log(values);
+            callback();
+          })
+    },
+    function (callback) {
+      db.sequelize
+          .query('SELECT "Animals".given_name, "Species".common_name, "Animals".weight FROM "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Animals".weight DESC LIMIT 1;')
+          .success(function (result) {
+            values.animalHighestWeight = result[0].count;
+            console.log(values);
             res.render('admin-dashboard/dashboard', { user: req.session.username, values: values });
             callback();
           })
