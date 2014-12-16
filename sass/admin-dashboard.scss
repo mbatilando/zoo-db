@@ -1,8 +1,13 @@
 .information-container {
+	h1 {
+		padding: 0 20px;
+	}
+
 	.section {
 		width: 21%;
-		display: inline-block;
-		padding: 0 2%;
+		display: block;
+		padding: 2%;
+		background: #eee;
 	}
 
 	.header {

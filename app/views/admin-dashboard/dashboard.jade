@@ -8,8 +8,8 @@ block sidebar
 
 block content
 	div(class="content")
-			h1 San Diego Zoo
 			div(class="information-container")
+				h1 San Diego Zoo
 				div(class="section")
 					div(class="header")
 						span Total
@@ -19,7 +19,7 @@ block content
 							span #{values.numZooMemberships}
 						div
 							span(class="info-category") Zookeepers: 
-							span #{values.numZookeepers}
+							span #{values.numZooKeepers}
 						div
 							span(class="info-category") Exhibits: 
 							span #{values.numExhibits}
@@ -35,7 +35,7 @@ block content
 							span #{values.avgNumAnimalsPerSpecies}
 				div(class="section")
 					div(class="header")
-						span Animal w/ Highest Weight
+						span Heaviest Animal
 					div(class="information")
 						div
 							span(class="info-category") Given Name: 
@@ -48,7 +48,7 @@ block content
 							span #{values.animalHighestWeight.weight}
 				div(class="section")
 					div(class="header")
-						span Animal w/ Lowest Weight
+						span Lightest Animal
 					div(class="information")
 						div
 							span(class="info-category") Given Name: 
