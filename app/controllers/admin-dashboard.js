@@ -53,9 +53,8 @@ router.get('/api/:zooId', function (req, res, next) {
         }
       }
       for (var i = 0, len = zoo.children.length; i < len; i++) {
-        // zoo.children[i].children = _.where(origResult, { last_name: zoo.children[i].last_name });
         for (var j = 0, jLen = origResult.length; j < jLen; j++) {
-          if (zoo.children[i].last_name === origResult[j].last_name) {
+          if (zoo.children[i].name.indexOf(origResult[j].last_name) > -1) {
             // Check if exhibit hasn't been added yet
             if (_.findIndex(zoo.children[i].children, { name: origResult[j].name }) === -1) {
               zoo.children[i].children.push({ name: origResult[j].name, children: []})
