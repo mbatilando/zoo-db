@@ -196,6 +196,7 @@ router.get('/:zooId', function (req, res, next) {
     function (callback) {
       db['Zoo'].find({where:{id:req.params.zooId}}).success(function (zoo) {
         values.zooName = zoo.name;
+        values.zooId = zoo.id;
         res.render('admin-dashboard/zoo', { user: req.session.username, values: values });
       });
     }
