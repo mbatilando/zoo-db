@@ -19,25 +19,6 @@ $(document).ready(function () {
 			.append("g")
 			.attr("transform", "translate(150,0)");
 
-			var test = {
-			    "name": "Elephant Odyssey",
-			    "children": [
-			        {
-			            "name": "California Condor",
-			            "children": [
-			                {
-			                    "name": "Sisquoc",
-			                    "icon": "http://i.imgur.com/RM0yxbY.jpg"
-			                },
-			                {
-			                    "name": "Shatash",
-			                    "icon": "http://i.imgur.com/lnLuWxR.jpg"
-			                }
-			            ]
-			        }
-			    ]
-			};
-
 			var nodes = cluster.nodes(data),
 			links = cluster.links(nodes);
 
@@ -52,9 +33,6 @@ $(document).ready(function () {
 			.enter().append("g")
 			.attr("class", "node")
 			.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
-
-			node.append("circle")
-			.attr("r", 4.5);
 
 			node.append("image")
 			.attr("xlink:href", function(d) { console.log(d.icon); return d.icon; })
