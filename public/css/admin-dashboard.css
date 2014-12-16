@@ -19,7 +19,13 @@
 .information-container .information .info-category {
   font-weight: bold;
 }
-.information-container .graph-container {
+.information-container #zooId {
+  visibility: hidden;
+  margin: 0;
+  height: 0;
+}
+
+.graph-container {
   float: right;
   position: relative;
   right: 110px;
