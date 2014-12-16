@@ -25,7 +25,7 @@ $(document).ready(function () {
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	function update(source) {
-
+		debugger
 	  // Compute the flattened node list.
 	  var nodes = tree.nodes(root);
 
@@ -150,7 +150,7 @@ $(document).ready(function () {
 
 
 
-	
+
 		  data.x0 = 0;
 		  data.y0 = 0;
 		  debugger;
