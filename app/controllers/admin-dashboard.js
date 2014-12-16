@@ -43,7 +43,7 @@ router.get('/api/:zooId', function (req, res, next) {
         // var newElem = {};
         // newElem.children = []; // Species
         // newElem.name = elem.full_name;
-        elem.name = elem.full_name;
+        // elem.name = elem.full_name;
         elem.children = [];
         return elem;
       });
@@ -51,7 +51,7 @@ router.get('/api/:zooId', function (req, res, next) {
         // zoo.children[i].children = _.where(origResult, { last_name: zoo.children[i].last_name });
         for (var j = 0, jLen = origResult.length; j < jLen; j++) {
           if (zoo.children[i].last_name === origResult[j].last_name) {
-            zoo.children[i].children.push({ name: origResult[j].common_name, children: []})
+            zoo.children[i].children.push({ name: origResult[j].name, children: []})
           }
         }
       }
