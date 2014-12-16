@@ -22,7 +22,8 @@ module.exports = function (grunt) {
           'public/css/authentication.css': 'sass/authentication.scss',
           'public/css/main-layout.css': 'sass/main-layout.scss',
           'public/css/header.css': 'sass/header.scss',
-          'public/css/sidebar.css': 'sass/sidebar.scss'
+          'public/css/sidebar.css': 'sass/sidebar.scss',
+          'public/css/animal-search.css': 'sass/animal-search.scss'
         }
         // files: [{
         //   expand: true,

@@ -14,6 +14,10 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
+  if (isEmpty(req.query)) {
+    return res.render('animal/search-animal', {});
+  }
+
   var entity = req.query.entity,
       attribute = req.query.attr,
       value = req.query.value;
@@ -21,7 +25,16 @@ router.get('/', function (req, res, next) {
   var query = {};
   query[attribute] = value;
 
-  db[entity].findAll({ where: query }).success(function (result) {
-    res.json(result);
+  db[entity].findAll({ where: query }).success(function (results) {
+    res.render('animal/search-animal', { results: results });
   });
 });
+
+
+function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+    return true;
+}

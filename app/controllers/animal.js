@@ -31,6 +31,16 @@ router.get('/:id', function (req, res, next) {
   });
 });
 
+router.get('/profile/:id', function (req, res, next) {
+  db['Exhibit'].findAll().success(function (exhibits) {
+    db['Species'].findAll().success(function (species) {
+      db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
+        res.render('animal/view-animal-profile', { animal: animal, user: req.session.username, exhibits: exhibits, species: species });
+      });
+    });
+  });
+});
+
 router.get('/', function (req, res, next) {
   db['Animal'].findAll({ order: 'id ASC' }).success(function (Animals) {
     res.render('animal/view-animals', { Animals: Animals, user: req.session.username });
