@@ -89,7 +89,7 @@ router.get('/:zooId', function (req, res, next) {
     },
     function (callback) {
       db.sequelize
-          .query('SELECT AVG(subquery.count) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."ExhibitId") AS subquery;')
+          .query('SELECT ROUND(AVG(subquery.count), 2) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."ExhibitId") AS subquery;')
           .success(function (result) {
             values.avgNumAnimalsPerExhibit = result[0].avg;
             console.log(values);
@@ -98,7 +98,7 @@ router.get('/:zooId', function (req, res, next) {
     },
     function (callback) {
       db.sequelize
-          .query('SELECT AVG(subquery.count) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
+          .query('SELECT ROUND(AVG(subquery.count), 2) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
           .success(function (result) {
             values.avgNumAnimalsPerSpecies = result[0].avg;
             console.log(values);
