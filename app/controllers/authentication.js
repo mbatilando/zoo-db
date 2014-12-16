@@ -15,7 +15,7 @@ router.post('/login', function (req, res, next) {
       req.session.username = user.username;
       req.session.user_type = user.user_type;
       if (req.session.user_type === 'admin') {
-        return res.render('admin/dashboard', { user: req.session.username, user: req.session.username });
+        return res.render('admin/search', { user: req.session.username, user: req.session.username });
       } else {
         return res.render('animal/search-animal-main', { user: req.session.username });
       }
