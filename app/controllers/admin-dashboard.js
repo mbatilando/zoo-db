@@ -43,6 +43,7 @@ router.get('/api/:zooId', function (req, res, next) {
       zoo.children = zoo.children.map(function (elem) {
         elem.children = [];
         elem.name = elem.full_name;
+        return elem;
       });
       res.json(zoo);
     })
