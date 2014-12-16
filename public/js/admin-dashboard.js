@@ -26,6 +26,7 @@ $(document).ready(function () {
 
 	function update(source) {
 		debugger
+		root = source;
 	  // Compute the flattened node list.
 	  var nodes = tree.nodes(root);
 
