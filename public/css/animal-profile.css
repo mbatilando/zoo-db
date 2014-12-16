@@ -24,7 +24,7 @@
   display: block;
   font-weight: bold;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
 }
 .profile-container .profile-top .species {
   font-style: italic;
@@ -41,9 +41,6 @@
   margin: 30px 15px;
   font-size: 14px;
 }
-.profile-container .profile-top .category {
-  font-weight: bold;
-}
 .profile-container .profile-information {
   width: 300px;
   display: inline-block;
@@ -51,6 +48,9 @@
 }
 .profile-container .profile-information h4 {
   margin: 25px 0 5px 0;
+}
+.profile-container .profile-information .category {
+  font-weight: bold;
 }
 .profile-container .profile-secondary {
   overflow: auto;
@@ -68,7 +68,7 @@
   float: left;
   width: 400px;
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .profile-container .profile-description h4 {
   margin: 0;

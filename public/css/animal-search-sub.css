@@ -18,7 +18,7 @@
   padding: 5px;
   display: inline-block;
   list-style: none;
-  background: #e7e7e7;
+  background: #f4f4f4;
   width: 175px;
   margin: 5px;
   height: 200px;
@@ -28,6 +28,7 @@
 }
 .content-container .picture-container img {
   max-width: 171px;
+  max-height: 134px;
   border: 1px solid #525353;
 }
 .content-container .tile-information {

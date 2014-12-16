@@ -1,0 +1,24 @@
+.information-container {
+	h1 {
+		padding: 0 20px;
+	}
+
+	.section {
+		width: 25%;
+		display: block;
+		padding: 2%;
+		background: #eee;
+	}
+
+	.header {
+		font-weight: bold;
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	.information {
+		.info-category {
+			font-weight: bold;
+		}
+	}
+}

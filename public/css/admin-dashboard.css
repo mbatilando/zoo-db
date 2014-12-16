@@ -1,0 +1,19 @@
+.information-container h1 {
+  padding: 0 20px;
+}
+.information-container .section {
+  width: 25%;
+  display: block;
+  padding: 2%;
+  background: #eee;
+}
+.information-container .header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.information-container .information .info-category {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=admin-dashboard.css.map */

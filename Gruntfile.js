@@ -25,7 +25,8 @@ module.exports = function (grunt) {
           'public/css/sidebar.css': 'sass/sidebar.scss',
           'public/css/animal-search.css': 'sass/animal-search.scss',
           'public/css/animal-search-sub.css': 'sass/animal-search-sub.scss',
-          'public/css/animal-profile.css': 'sass/animal-profile.scss'
+          'public/css/animal-profile.css': 'sass/animal-profile.scss',
+          'public/css/admin-dashboard.css': 'sass/admin-dashboard.scss'
         }
         // files: [{
         //   expand: true,
