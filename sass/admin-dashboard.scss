@@ -24,16 +24,17 @@
 		}
 	}
 
-	.graph-container {
-		float: right;
-		position: relative;
-		right: 110px;
-		top: 45px;
-	}
-
 	#zooId {
 		visibility: hidden;
 		margin: 0;
 		height: 0;
 	}
 }
+
+.graph-container {
+	float: right;
+	position: relative;
+	right: 110px;
+	top: 45px;
+}
+
