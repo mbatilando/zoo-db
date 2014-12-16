@@ -57,7 +57,7 @@ router.get('/api/:zooId', function (req, res, next) {
             }
           }
         }
-
+        console.log('YOOOOOOOOOOO00o0o0o0o0o0');
         for (var j = 0, jLen = zoo.children[i].length; j < jLen; j++) {
           for (var k = 0, kLen = origResult.length; k < kLen; k++) {
             console.log('YOOOOOOOOOOO00o0o0o0o0o0');
