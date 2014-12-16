@@ -91,7 +91,7 @@ router.get('/:zooId', function (req, res, next) {
       db.sequelize
           .query('SELECT AVG(subquery.count) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."ExhibitId") AS subquery;')
           .success(function (result) {
-            values.avgNumAnimalsPerExhibit = result[0].count;
+            values.avgNumAnimalsPerExhibit = result[0].avg;
             console.log(values);
             callback();
           })
@@ -100,7 +100,7 @@ router.get('/:zooId', function (req, res, next) {
       db.sequelize
           .query('SELECT AVG(subquery.count) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
           .success(function (result) {
-            values.avgNumAnimalsPerSpecies = result[0].count;
+            values.avgNumAnimalsPerSpecies = result[0].avg;
             console.log(values);
             callback();
           })
@@ -110,7 +110,10 @@ router.get('/:zooId', function (req, res, next) {
           .query('SELECT "Animals".given_name, "Species".common_name, "Animals".weight FROM "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Animals".weight LIMIT 1;')
           .success(function (result) {
             console.log(result);
-            values.animalLowestWeight = result[0].avg;
+            values.animalLowestWeight = {};
+            values.animalLowestWeight.given_name = result[0].given_name;
+            values.animalLowestWeight.common_name = result[0].common_name;
+            values.animalLowestWeight.weight = result[0].weight;
             console.log(values);
             callback();
           })
@@ -119,7 +122,10 @@ router.get('/:zooId', function (req, res, next) {
       db.sequelize
           .query('SELECT "Animals".given_name, "Species".common_name, "Animals".weight FROM "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Animals".weight DESC LIMIT 1;')
           .success(function (result) {
-            values.animalHighestWeight = result[0].avg;
+            values.animalHighestWeight = {};
+            values.animalHighestWeight.given_name = result[0].given_name;
+            values.animalHighestWeight.common_name = result[0].common_name;
+            values.animalHighestWeight.weight = result[0].weight;
             console.log(values);
             res.render('admin-dashboard/dashboard', { user: req.session.username, values: values });
             callback();
