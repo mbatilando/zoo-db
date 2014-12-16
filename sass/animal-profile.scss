@@ -7,7 +7,6 @@
 
 	.profile-top {
 		height: 200px;
-		overflow: auto;
 
 		.profile-left {
 			float: left;
@@ -33,13 +32,13 @@
 		}
 
 		.profile-picture {
-			width: 100px;
-			min-height: 135px;
+			max-height: 150px;
+			max-width: 135px;
 		}
 
 		.profile-right {
 			float: left;
-			margin: 30px 50px 0 0;
+			margin: 30px 15px;
 			font-size: 14px;
 		}
 
