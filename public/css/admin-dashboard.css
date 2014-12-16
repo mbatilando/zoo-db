@@ -1,8 +1,12 @@
+.information-container {
+  display: inline-block;
+  width: 300px;
+}
 .information-container h1 {
   padding: 0 20px;
 }
 .information-container .section {
-  width: 25%;
+  width: 100%;
   display: block;
   padding: 2%;
   background: #eee;
@@ -14,6 +18,12 @@
 }
 .information-container .information .info-category {
   font-weight: bold;
+}
+.information-container .graph-container {
+  float: right;
+  position: relative;
+  right: 110px;
+  top: 45px;
 }
 
 /*# sourceMappingURL=admin-dashboard.css.map */

@@ -1,10 +1,12 @@
 .information-container {
+	display: inline-block;
+	width: 300px;
 	h1 {
 		padding: 0 20px;
 	}
 
 	.section {
-		width: 25%;
+		width: 100%;
 		display: block;
 		padding: 2%;
 		background: #eee;
@@ -20,5 +22,12 @@
 		.info-category {
 			font-weight: bold;
 		}
+	}
+
+	.graph-container {
+		float: right;
+		position: relative;
+		right: 110px;
+		top: 45px;
 	}
 }
