@@ -6,6 +6,7 @@ $(document).ready(function () {
 		success: function (data) {
 		  data.x0 = 0;
 		  data.y0 = 0;
+		  debugger;
 		  update(data);
 		  data.children.forEach(function(d) { click(d); });
 		}
@@ -28,7 +29,7 @@ $(document).ready(function () {
 
 	var svg = d3.select("body").append("svg")
 	    .attr("width", width + margin.left + margin.right)
-	  .append("g")
+	  	.append("g")
 	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	function update(source) {
@@ -85,7 +86,7 @@ $(document).ready(function () {
 	      .duration(duration)
 	      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 	      .style("opacity", 1)
-	    .select("rect")
+	      .select("rect")
 	      .style("fill", color);
 
 	  // Transition exiting nodes to the parent's new position.
