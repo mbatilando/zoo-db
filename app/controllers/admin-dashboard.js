@@ -61,7 +61,9 @@ router.get('/api/:zooId', function (req, res, next) {
         for (var j = 0, jLen = zoo.children[i].length; j < jLen; j++) {
           for (var k = 0, kLen = origResult.length; k < kLen; k++) {
             if (zoo.children[i].children[j].name === origResult[k].name) {
+              console.log('??????????????????????????????');
               if (_.findIndex(zoo.children[i].children[j].children, { name: origResult[k].common_name }) === -1) {
+                console.log('ARTW%TSHSFTSHRHDGFHDGFYTSYTERYRTYRTYTRHGFHFGHGFHGFHFFH');
                 zoo.children[i].children[j].children.push({ name: origResult[k].common_name, children: []});
               }
             }
