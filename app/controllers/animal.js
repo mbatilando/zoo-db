@@ -39,7 +39,7 @@ router.get('/profile/:id', function (req, res, next) {
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
     db['Exhibit'].find({ where: { id: animal.ExhibitId }}).success(function (exhibit) {
       db['Species'].find({ where: { id: animal.SpeciesId }}).success(function (species) {
-        animal.birth_date = animal.birth_date.split(" ").slice(1, 4).join(" ");
+        animal.birth_date = animal.birth_date.toString().split(" ").slice(1, 4).join(" ");
         res.render('animal/view-animal-profile', { exhibit: exhibit, species: species, animal: animal, user: req.session.username});
       });
     });
