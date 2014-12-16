@@ -57,5 +57,10 @@
 .pure-menu.header .pure-form #search {
   padding: 7px 15px;
 }
+.pure-menu.header .pure-form .pure-button-primary {
+  background-color: #e6d6bd;
+  color: black;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=header.css.map */

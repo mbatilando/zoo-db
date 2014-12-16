@@ -14,6 +14,7 @@ module.exports = function (app) {
 };
 
 router.get('/add', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Exhibit'].findAll({order: 'name ASC'}).success(function (exhibits) {
     db['Species'].findAll({order: 'common_name ASC'}).success(function (species) {
       res.render('animal/add-animal', { user: req.session.username, exhibits: exhibits, species: species });
@@ -22,6 +23,7 @@ router.get('/add', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Exhibit'].findAll({order: 'name ASC'}).success(function (exhibits) {
     db['Species'].findAll({order: 'common_name ASC'}).success(function (species) {
       db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
@@ -32,6 +34,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.get('/profile/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   if (isNaN(req.params.id)) { return; };
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
     db['Exhibit'].find({ where: { id: animal.ExhibitId }}).success(function (exhibit) {
@@ -43,12 +46,14 @@ router.get('/profile/:id', function (req, res, next) {
 });
 
 router.get('/', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Animal'].findAll({ order: 'id ASC' }).success(function (Animals) {
     res.render('animal/view-animals', { Animals: Animals, user: req.session.username });
   });
 });
 
 router.post('/', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Animal'].create(req.body).success(function (animal) {
     db['Animal'].findAll().success(function (animals) {
       req.dataProcessed = animals;
@@ -63,6 +68,7 @@ function viewAnimals (req, res) {
 }
 
 router.put('/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
     animal.updateAttributes(req.body).success(function (animal) {
       db['Animal'].findAll().success(function (animals) {
@@ -74,6 +80,7 @@ router.put('/:id', function (req, res, next) {
 });
 
 router.delete('/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
     animal.destroy().success(function () {
       res.send(200);

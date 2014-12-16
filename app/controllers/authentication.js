@@ -14,7 +14,11 @@ router.post('/login', function (req, res, next) {
     if (user.password === req.body.password) {
       req.session.username = user.username;
       req.session.user_type = user.user_type;
-      return res.redirect('/');
+      if (req.session.user_type === 'admin') {
+        return res.render('zoo/add-zoo', { user: req.session.username, user: req.session.username });
+      } else {
+        return res.render('animal/search-animal-main', { user: req.session.username });
+      }
     } else {
       return res.render('authentication/login', { error: 'Invalid Password/Username' });
     }
@@ -23,7 +27,7 @@ router.post('/login', function (req, res, next) {
 
 router.get('/logout', function (req, res, next) {
   req.session.destroy();
-  return res.redirect('authentication/login');
+  return res.redirect('/authentication/login');
 });
 
 router.get('/register', function (req, res, next) {
