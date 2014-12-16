@@ -27,7 +27,7 @@ router.get('/:zooId', function (req, res, next) {
   async.series([
     function (callback) {
       db.sequelize
-          .query('SELECT COUNT(*) FROM "ZooMemberships" WHERE "ZooMemberships"."ZooId" = 1;')
+          .query('SELECT COUNT(*) FROM "ZooMemberships" WHERE "ZooMemberships"."ZooId" = ' + req.params.zooId + ';')
           .success(function (result) {
             values.numZooMemberships = result[0].count;
             callback();
@@ -35,7 +35,7 @@ router.get('/:zooId', function (req, res, next) {
     },
     function (callback) {
       db.sequelize
-          .query('SELECT COUNT(*) FROM "Zookeepers" WHERE "Zookeepers"."ZooId" = 1;')
+          .query('SELECT COUNT(*) FROM "Zookeepers" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ';')
           .success(function (result) {
             console.log(result);
             values.numZooKeepers = result[0].count;
@@ -44,7 +44,7 @@ router.get('/:zooId', function (req, res, next) {
     },
     function (callback) {
       db.sequelize
-          .query('SELECT COUNT(*) FROM "Zookeepers", "Exhibits" WHERE "Zookeepers"."ZooId" = 1 AND "Zookeepers".id = "Exhibits"."ZookeeperId";')
+          .query('SELECT COUNT(*) FROM "Zookeepers", "Exhibits" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId";')
           .success(function (result) {
             console.log(result);
             values.numExhibits = result[0].count;
@@ -53,7 +53,7 @@ router.get('/:zooId', function (req, res, next) {
     },
     function (callback) {
       db.sequelize
-          .query('SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = 1 AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId";')
+          .query('SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId";')
           .success(function (result) {
             console.log(result);
             values.numAnimals = result[0].count;
@@ -62,7 +62,7 @@ router.get('/:zooId', function (req, res, next) {
     },
     function (callback) {
       db.sequelize
-          .query('SELECT COUNT(*) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = 1 AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
+          .query('SELECT COUNT(*) FROM (SELECT COUNT(*) FROM "Zookeepers", "Exhibits", "Animals" WHERE "Zookeepers"."ZooId" = ' + req.params.zooId + ' AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" GROUP BY "Animals"."SpeciesId") AS subquery;')
           .success(function (result) {
             values.numSpecies = result[0].count;
             console.log(values);
