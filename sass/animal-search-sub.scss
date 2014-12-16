@@ -3,11 +3,49 @@
 }
 
 .content-container {
-	width: 500px;
+	width: 800px;
 	display: block;
 	margin: 0 auto;
 
 	h1 {
 		text-align: center;
 	}
+
+	.results {
+		margin: 0;
+		padding: 0;
+	}
+
+	.tile {
+		padding: 5px;
+		display: inline-block;
+		list-style: none;
+		background: #e7e7e7;
+		width: 175px;
+		margin: 5px;
+		height: 200px;
+		float: left;
+		color: #525353;
+		border: 1px solid #525353
+	}
+
+	.picture-container {
+		img {
+			max-width: 171px;
+			border: 1px solid #525353;
+		}
+	}
+
+	.tile-information {
+		line-height: 1.4;
+
+		.name {
+			font-weight: bold;
+		}
+
+		span {
+			display: block;
+		}
+	}
+
 }

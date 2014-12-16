@@ -54,7 +54,7 @@
 }
 .profile-container .profile-secondary {
   overflow: auto;
-  height: 200px;
+  max-height: 1000px;
   padding: 0 35px;
 }
 .profile-container .profile-bottom svg {

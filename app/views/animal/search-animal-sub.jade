@@ -26,21 +26,32 @@ html(lang='en')
       block content
         div(class="content-container")
           h1 Search Results
-          table(class="pure-table custom-table")
-            thead
-              tr
-                th Given Name
-                th Weight
-                th Picture URL
-                th Gender
-            tbody
-              each animal, index in results
-                tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
-                  td
-                    a(href="/animal/profile/#{animal.id}") #{animal.given_name}
-                  td
-                    a(href="/animal/profile/#{animal.id}") #{animal.weight}
-                  td
-                    a(href="/animal/profile/#{animal.id}") #{animal.picture_url}
-                  td
-                    a(href="/animal/profile/#{animal.id}") #{animal.gender}
+          ul(class="results")
+            each animal, index in results
+              a(href="/animal/profile/#{animal.id}")
+                li(class="tile")
+                  div(class="picture-container")
+                    img(src="#{animal.picture_url}")
+                  div(class="tile-information")
+                    span(class="name") #{animal.given_name}
+                    span(class="weight") #{animal.weight} lbs.
+                    span(class="gender") #{animal.gender}
+
+          //- table(class="pure-table custom-table")
+          //-   thead
+          //-     tr
+          //-       th Given Name
+          //-       th Weight
+          //-       th Picture URL
+          //-       th Gender
+          //-   tbody
+          //-     each animal, index in results
+          //-       tr(class=(index % 2 == 0) ? 'pure-table-even' : 'pure-table-odd')
+          //-         td
+          //-           a(href="/animal/profile/#{animal.id}") #{animal.given_name}
+          //-         td
+          //-           a(href="/animal/profile/#{animal.id}") #{animal.weight}
+          //-         td
+          //-           a(href="/animal/profile/#{animal.id}") #{animal.picture_url}
+          //-         td
+          //-           a(href="/animal/profile/#{animal.id}") #{animal.gender}

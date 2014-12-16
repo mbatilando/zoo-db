@@ -3,12 +3,41 @@
 }
 
 .content-container {
-  width: 500px;
+  width: 800px;
   display: block;
   margin: 0 auto;
 }
 .content-container h1 {
   text-align: center;
+}
+.content-container .results {
+  margin: 0;
+  padding: 0;
+}
+.content-container .tile {
+  padding: 5px;
+  display: inline-block;
+  list-style: none;
+  background: #e7e7e7;
+  width: 175px;
+  margin: 5px;
+  height: 200px;
+  float: left;
+  color: #525353;
+  border: 1px solid #525353;
+}
+.content-container .picture-container img {
+  max-width: 171px;
+  border: 1px solid #525353;
+}
+.content-container .tile-information {
+  line-height: 1.4;
+}
+.content-container .tile-information .name {
+  font-weight: bold;
+}
+.content-container .tile-information span {
+  display: block;
 }
 
 /*# sourceMappingURL=animal-search-sub.css.map */
