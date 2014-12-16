@@ -6,20 +6,36 @@
   background: #eee;
 }
 .profile-container .profile-top {
-  height: 200px;
+  height: 400px;
 }
 .profile-container .profile-top .profile-left {
   float: left;
   min-width: 100px;
   max-width: 200px;
   display: inline-block;
-  font-size: 20px;
+  font-size: 16px;
   margin: 15px 0 0 50px;
-  text-align: center;
+}
+.profile-container .profile-top .profile-secondary h4 {
+  margin: 25px 0 5px 0;
+}
+.profile-container .profile-top .profile-picture-container {
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid #525353;
+  background: white;
+  margin: 0 auto 15px auto;
+  display: block;
 }
 .profile-container .profile-top .name {
   display: block;
   font-weight: bold;
+  text-align: center;
 }
 .profile-container .profile-top .species {
   font-style: italic;
@@ -28,8 +44,8 @@
   display: block;
 }
 .profile-container .profile-top .profile-picture {
-  max-height: 150px;
-  max-width: 135px;
+  max-height: 200px;
+  max-width: 230px;
 }
 .profile-container .profile-top .profile-right {
   float: left;
@@ -43,15 +59,18 @@
   margin: 0 auto;
   display: block;
 }
-.profile-container .profile-middle {
+.profile-container .profile-description {
   padding: 0 50px;
   float: left;
-  width: 289px;
+  width: 400px;
   display: inline-block;
   margin-top: 30px;
 }
-.profile-container .profile-middle h4 {
+.profile-container .profile-description h4 {
   margin: 0;
+}
+.profile-container .profile-description p {
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=animal-profile.css.map */

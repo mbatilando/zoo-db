@@ -6,21 +6,41 @@
 	background: #eee;
 
 	.profile-top {
-		height: 200px;
+		height: 400px;
 
 		.profile-left {
 			float: left;
 			min-width: 100px;
 			max-width: 200px;
 			display: inline-block;
-			font-size: 20px;
+			font-size: 16px;
 			margin: 15px 0 0 50px;
-			text-align: center;
+		}
+
+		.profile-secondary {
+			h4 {
+				margin: 25px 0 5px 0;
+			}
+		}
+
+		.profile-picture-container {
+			height: 150px;
+			width: 150px;
+			border-radius: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			border: 2px solid #525353;
+			background: white;
+			margin: 0 auto 15px auto;
+			display: block;
 		}
 
 		.name {
 			display: block;
 			font-weight: bold;
+			text-align: center;
 		}
 
 		.species {
@@ -32,8 +52,8 @@
 		}
 
 		.profile-picture {
-			max-height: 150px;
-			max-width: 135px;
+			max-height: 200px;
+			max-width: 230px;
 		}
 
 		.profile-right {
@@ -55,15 +75,19 @@
 		}
 	}
 
-	.profile-middle {
+	.profile-description {
 		padding: 0 50px;
 		float: left;
-		width: 289px;
+		width: 400px;
 		display: inline-block;
 		margin-top: 30px;
 
 		h4 {
 			margin: 0;
+		}
+
+		p {
+			margin-top: 5px;
 		}
 	}
 }

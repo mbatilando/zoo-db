@@ -57,7 +57,6 @@ $(document).ready(function () {
 			.attr("r", 4.5);
 
 			node.append("image")
-			.append("svg:a").attr("xlink:href", function(d){ return "/animal/profile/" + d.id })
 			.attr("xlink:href", function(d) { console.log(d.icon); return d.icon; })
 			.attr("x", "8px")
 			.attr("y", "3px")
