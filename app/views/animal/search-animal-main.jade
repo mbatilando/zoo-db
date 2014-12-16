@@ -18,6 +18,7 @@ html(lang='en')
       script(src='/components/jquery/dist/jquery.min.js')
       script(src='/components/moment/moment.js')
       script(src='/components/jquery-ui/jquery-ui.js')
+      script(src='/js/search.js')
   body
     block header
       include ../header/header
@@ -25,8 +26,15 @@ html(lang='en')
       block content
         div(class="search-container")
           img(class="main-logo" src="/img/big-brand.png")
-          form(class="pure-form")
-            select(class="attribute")
-              option name
-            input(type="text" placeholder="Search Animal")
-            button(type="submit" class="pure-button pure-button-primary") Search
+          form(class="pure-form search-form")
+            select(id="attribute" class="attribute")
+              option(value="given_name") Name
+              option(value="weight") Weight
+              option(value="picture_url") Picture Url
+              option(value="gender") Gender
+              option(value="ExhibitId") Exhibit
+              option(value="species") Species
+            input(id="value" type="text" placeholder="Search Animal")
+            button(id="search"
+                   type="submit"
+                   class="pure-button pure-button-primary") Search

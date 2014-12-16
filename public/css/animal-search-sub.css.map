@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACL,QAAQ,EAAE,IAAI;;;AAGf,kBAAmB;EAClB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,MAAM;;AAEd,qBAAG;EACF,UAAU,EAAE,MAAM",
+"sources": ["../../sass/animal-search-sub.scss"],
+"names": [],
+"file": "animal-search-sub.css"
+}

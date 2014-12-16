@@ -23,7 +23,8 @@ module.exports = function (grunt) {
           'public/css/main-layout.css': 'sass/main-layout.scss',
           'public/css/header.css': 'sass/header.scss',
           'public/css/sidebar.css': 'sass/sidebar.scss',
-          'public/css/animal-search.css': 'sass/animal-search.scss'
+          'public/css/animal-search.css': 'sass/animal-search.scss',
+          'public/css/animal-search-sub.css': 'sass/animal-search-sub.scss'
         }
         // files: [{
         //   expand: true,

@@ -1,0 +1,14 @@
+.main {
+  overflow: auto;
+}
+
+.content-container {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.content-container h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=animal-search-sub.css.map */
