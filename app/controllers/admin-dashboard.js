@@ -49,7 +49,7 @@ router.get('/api/:zooId', function (req, res, next) {
       });
       for (var i = 0, len = zoo.children.length; i < len; i++) {
         // zoo.children[i].children = _.where(origResult, { last_name: zoo.children[i].last_name });
-        for (var j = 0, len = origResult.length; j < jLen; j++) {
+        for (var j = 0, jLen = origResult.length; j < jLen; j++) {
           if (zoo.children[i].last_name === origResult[j].last_name) {
             zoo.children[i].children.push({ name: origResult[j].common_name, children: []})
           }
