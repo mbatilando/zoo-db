@@ -13,7 +13,15 @@ module.exports = function (app) {
   app.use('/search', router);
 };
 
+function authenticate (req) {
+  if (!req.session.username || !req.session.user_type) {
+    return false;
+  }
+  return true;
+}
+
 router.get('/', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   if (isEmpty(req.query)) {
     return res.render('animal/search-animal-main', {});
   }

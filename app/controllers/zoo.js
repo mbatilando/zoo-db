@@ -7,7 +7,15 @@ module.exports = function (app) {
   app.use('/zoo', router);
 };
 
+function authenticate (req) {
+  if (!req.session.username || !req.session.user_type) {
+    return false;
+  }
+  return true;
+}
+
 router.get('/add', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   if (req.session.username) {
     var username = req.session.username;
   }
@@ -15,6 +23,7 @@ router.get('/add', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   var timeslots = [{ time: '00:00:00', opening: false, closing: false },
                    { time: '01:00:00', opening: false, closing: false },
                    { time: '02:00:00', opening: false, closing: false },
@@ -64,6 +73,7 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.get('/', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Zoo'].findAll({ order: 'id ASC' }).success(function (Zoos) {
   for (var i = 0, len = Zoos.length; i < len; i++) {
     Zoos[i].opening_time = moment(Zoos[i].opening_time, 'HH:mm:ss').format('hh:mm A');
@@ -74,6 +84,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   console.log(req.body);
   db['Zoo'].create(req.body).success(function (zoo) {
     db['Zoo'].findAll().success(function (zoos) {
@@ -89,6 +100,7 @@ function viewZoos (req, res) {
 }
 
 router.put('/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Zoo'].find({ where: { id: req.params.id }}).success(function (zoo) {
     zoo.updateAttributes(req.body).success(function (zoos) {
       db['Zoo'].findAll().success(function (zoos) {
@@ -100,6 +112,7 @@ router.put('/:id', function (req, res, next) {
 });
 
 router.delete('/:id', function (req, res, next) {
+  if (!authenticate(req)) return res.redirect('/authentication/login');
   db['Zoo'].find({ where: { id: req.params.id }}).success(function (zoos) {
     zoos.destroy().success(function () {
       res.send(200);
