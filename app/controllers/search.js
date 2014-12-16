@@ -45,13 +45,21 @@ router.get('/api/:animalId', function (req, res, next) {
       for (var i = 0, len = result.animals.length; i < len; i++) {
         if (result.animals[i].id == req.params.animalId) {
           json.children[0].children.push({ name: result.animals[i].given_name, icon: result.animals[i].picture_url })
+          result.animals.splice(i, 1);
           break;
         }
       }
-      var randomIndex = getRandomArbitrary(0, result.animals.length);
-      json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url })
-      randomIndex = getRandomArbitrary(0, result.animals.length);
-      json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url })
+      var counter = 1;
+      do {
+        var randomIndex = getRandomArbitrary(0, result.animals.length);
+        json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url });
+        result.animals.splice(randomIndex, 1);
+        counter++;
+      } while (result.animals.length && counter <= 3)
+      // var randomIndex = getRandomArbitrary(0, result.animals.length);
+      // json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url })
+      // randomIndex = getRandomArbitrary(0, result.animals.length);
+      // json.children[0].children.push({ name: result.animals[randomIndex].given_name, icon: result.animals[randomIndex].picture_url })
 
       db['Exhibit'].find({ where: { id: animal.ExhibitId }}).success(function (exhibit) {
         json.name = exhibit.name;
