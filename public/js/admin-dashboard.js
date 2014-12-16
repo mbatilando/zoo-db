@@ -4,144 +4,7 @@ $(document).ready(function () {
 		type: 'GET',
 		url: '/admin/dashboard/api/'+$('#zooId').html(),
 		success: function (data) {
-		  data.x0 = 0;
-		  data.y0 = 0;
-		  debugger;
-		  var data = {
-  "name": "Zoo 1",
-  "children": [
-    {
-      "name": "Zookeeper 1",
-      "children": [
-        {
-          "name": "Exhibit 1",
-          "children": [
-            {
-              "name": "Species 1",
-              "children": [
-                {
-                  "name": "Animal 1"
-                },
-                {
-                  "name": "Animal 2"
-                }
-              ]
-            },
-            {
-              "name": "Species 2",
-              "children": [
-                {
-                  "name": "Animal 3"
-                },
-                {
-                  "name": "Animal 4"
-                },
-                {
-                  "name": "Animal 5"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Exhibit 2",
-          "children": [
-            {
-              "name": "Species 3",
-              "children": [
-                {
-                  "name": "Animal 6"
-                },
-                {
-                  "name": "Animal 7"
-                },
-                {
-                  "name": "Animal 8"
-                },
-                {
-                  "name": "Animal 9"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Zookeeper 2",
-      "children": [
-        {
-          "name": "Exhibit 3",
-          "children": [
-            {
-              "name": "Species 4",
-              "children": [
-                {
-                  "name": "Animal 10"
-                },
-                {
-                  "name": "Animal 11"
-                },
-                {
-                  "name": "Animal 12"
-                },
-                {
-                  "name": "Animal 13"
-                },
-                {
-                  "name": "Animal 14"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Zookeeper 3",
-      "children": [
-        {
-          "name": "Exhibit 4",
-          "children": [
-            {
-              "name": "Species 5",
-              "children": [
-                {
-                  "name": "Animal 15"
-                }
-              ]
-            },
-            {
-              "name": "Species 6",
-              "children": [
-                {
-                  "name": "Animal 16"
-                },
-                {
-                  "name": "Animal 17"
-                }
-              ]
-            },
-            {
-              "name": "Species 7",
-              "children": [
-                {
-                  "name": "Animal 18"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-};
-		  update(data);
-		  data.children.forEach(function(d) { click(d); });
-		}
-	});
-
-	var margin = {top: 30, right: 20, bottom: 30, left: 20},
+			var margin = {top: 30, right: 20, bottom: 30, left: 20},
     width = 400 - margin.left - margin.right,
     barHeight = 26,
     barWidth = width * .8;
@@ -284,4 +147,144 @@ $(document).ready(function () {
 	function textweight(d) {
 	  return d._children ? "bold" : d.children ? "bold" : "normal";
 	}
+
+
+
+	
+		  data.x0 = 0;
+		  data.y0 = 0;
+		  debugger;
+		  var test = {
+			  "name": "Zoo 1",
+			  "children": [
+			    {
+			      "name": "Zookeeper 1",
+			      "children": [
+			        {
+			          "name": "Exhibit 1",
+			          "children": [
+			            {
+			              "name": "Species 1",
+			              "children": [
+			                {
+			                  "name": "Animal 1"
+			                },
+			                {
+			                  "name": "Animal 2"
+			                }
+			              ]
+			            },
+			            {
+			              "name": "Species 2",
+			              "children": [
+			                {
+			                  "name": "Animal 3"
+			                },
+			                {
+			                  "name": "Animal 4"
+			                },
+			                {
+			                  "name": "Animal 5"
+			                }
+			              ]
+			            }
+			          ]
+			        },
+			        {
+			          "name": "Exhibit 2",
+			          "children": [
+			            {
+			              "name": "Species 3",
+			              "children": [
+			                {
+			                  "name": "Animal 6"
+			                },
+			                {
+			                  "name": "Animal 7"
+			                },
+			                {
+			                  "name": "Animal 8"
+			                },
+			                {
+			                  "name": "Animal 9"
+			                }
+			              ]
+			            }
+			          ]
+			        }
+			      ]
+			    },
+			    {
+			      "name": "Zookeeper 2",
+			      "children": [
+			        {
+			          "name": "Exhibit 3",
+			          "children": [
+			            {
+			              "name": "Species 4",
+			              "children": [
+			                {
+			                  "name": "Animal 10"
+			                },
+			                {
+			                  "name": "Animal 11"
+			                },
+			                {
+			                  "name": "Animal 12"
+			                },
+			                {
+			                  "name": "Animal 13"
+			                },
+			                {
+			                  "name": "Animal 14"
+			                }
+			              ]
+			            }
+			          ]
+			        }
+			      ]
+			    },
+			    {
+			      "name": "Zookeeper 3",
+			      "children": [
+			        {
+			          "name": "Exhibit 4",
+			          "children": [
+			            {
+			              "name": "Species 5",
+			              "children": [
+			                {
+			                  "name": "Animal 15"
+			                }
+			              ]
+			            },
+			            {
+			              "name": "Species 6",
+			              "children": [
+			                {
+			                  "name": "Animal 16"
+			                },
+			                {
+			                  "name": "Animal 17"
+			                }
+			              ]
+			            },
+			            {
+			              "name": "Species 7",
+			              "children": [
+			                {
+			                  "name": "Animal 18"
+			                }
+			              ]
+			            }
+			          ]
+			        }
+			      ]
+			    }
+			  ]
+			};
+		  update(test);
+		  test.children.forEach(function(d) { click(d); });
+		}
+	});
 });
