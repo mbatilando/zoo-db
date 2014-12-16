@@ -1,5 +1,6 @@
 .profile-container {
-  width: 800px;
+  width: 900px;
+  padding: 30px;
   display: block;
   margin: 50px auto;
   background: #eee;
@@ -34,7 +35,7 @@
 .profile-container .profile-top .profile-right {
   float: left;
   margin: 30px 50px 0 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 .profile-container .profile-top .category {
   font-weight: bold;
