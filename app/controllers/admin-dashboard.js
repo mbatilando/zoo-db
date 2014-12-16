@@ -38,9 +38,7 @@ router.get('/api/:zooId', function (req, res, next) {
         elem.full_name = elem.first_name + ' ' + elem.last_name;
         return elem;
       });
-      console.log(result);
       zoo.children = _.uniq(result, 'full_name');
-      console.log(zoo);
       zoo.children = zoo.children.map(function (elem) {
         // var newElem = {};
         // newElem.children = []; // Species
@@ -50,8 +48,12 @@ router.get('/api/:zooId', function (req, res, next) {
         return elem;
       });
       for (var i = 0, len = zoo.children.length; i < len; i++) {
-        zoo.children[i].children = _.where(origResult, { last_name: zoo.children[i].last_name });
-        console.log(zoo.children[i].children);
+        // zoo.children[i].children = _.where(origResult, { last_name: zoo.children[i].last_name });
+        for (var j = 0, len = origResult.length; j < jLen; j++) {
+          if (zoo.children[i].last_name === origResult[j].last_name) {
+            zoo.children[i].children.push({ name: origResult[j].common_name, children: []})
+          }
+        }
       }
 
       // for(i = 0, len = zoo.children)
