@@ -28,25 +28,11 @@ router.get('/', function (req, res, next) {
 
 router.get('/api/:zooId', function (req, res, next) {
   var zoo = {};
-  zoo.name = "Test Zoo";
   zoo.children = []; // Zookeepers
   db.sequelize
     .query('SELECT "Zooes".name, "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name FROM "Zooes", "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zooes".id = ' + req.params.zooId + ' AND "Zooes".id = "Zookeepers"."ZooId" AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name;')
     .success(function (result) {
       var origResult = result;
-      // result = result.map(function (elem) {
-      //   elem.full_name = elem.first_name + ' ' + elem.last_name;
-      //   return elem;
-      // });
-      // zoo.children = _.uniq(result, 'full_name');
-      // zoo.children = zoo.children.map(function (elem) {
-      //   // var newElem = {};
-      //   // newElem.children = []; // Species
-      //   // newElem.name = elem.full_name;
-      //   // elem.name = elem.full_name;
-      //   elem.children = [];
-      //   return elem;
-      // });
       for (var i = 0, len = origResult.length; i < len; i++) {
         if (_.findIndex(zoo.children, { name: origResult[i].first_name + ' ' + origResult[i].last_name }) === -1) {
           zoo.children.push({ name: origResult[i].first_name + ' ' + origResult[i].last_name, children: []})
@@ -82,9 +68,10 @@ router.get('/api/:zooId', function (req, res, next) {
           }
         }
       }
-
-      // for(i = 0, len = zoo.children)
-      res.json(zoo);
+      db['Zoo'].find({where: {id: req.params.id}}).success(function (dZoo) {
+        zoo.name = dZoo.name;
+        res.json(zoo);
+      });
     })
 });
 
