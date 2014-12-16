@@ -26,19 +26,16 @@ html(lang='en')
         div(class="profile-container")
           div(class="profile-top")
             div(class="profile-left")
-              img(class="profile-picture" src="")
-              span(class="name") Mr. Whiskers
-              span(class="species") Omnivera pu
+              img(class="profile-picture" src="#{animal.picture_url}")
+              span(class="name") #{animal.given_name}
+              span(class="species") #{animal.species}
             div(class="profile-right")
               div
                 span(class="category") Weight: 
-                span(class="value") 15 lbs.
+                span(class="value") #{animal.weight}
               div
                 span(class="category") Gender: 
-                span(class="value") Female
-              div
-                span(class="category") Exhibit: 
-                span(class="value") Safari
+                span(class="value") #{animal.gender}
           div(class="profile-bottom")
             div(class="graph")
 
