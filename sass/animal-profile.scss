@@ -6,26 +6,11 @@
 	background: #eee;
 
 	.profile-top {
-		height: 400px;
-
-		.profile-left {
-			float: left;
-			min-width: 100px;
-			max-width: 200px;
-			display: inline-block;
-			font-size: 16px;
-			margin: 15px 0 0 50px;
-		}
-
-		.profile-secondary {
-			h4 {
-				margin: 25px 0 5px 0;
-			}
-		}
+		height: 250px;
 
 		.profile-picture-container {
-			height: 150px;
-			width: 150px;
+			height: 200px;
+			width: 200px;
 			border-radius: 100px;
 			display: flex;
 			align-items: center;
@@ -52,8 +37,8 @@
 		}
 
 		.profile-picture {
-			max-height: 200px;
-			max-width: 230px;
+			max-height: 300px;
+			max-width: 300px;
 		}
 
 		.profile-right {
@@ -67,11 +52,29 @@
 		}
 	}
 
+	.profile-information {
+		width: 300px;
+		display: inline-block;
+		float: left;
+
+		h4 {
+			margin: 25px 0 5px 0;
+		}
+	}
+
+	.profile-secondary {
+		overflow: auto;
+		height: 200px;
+		padding: 0 35px;
+	}
+
 	.profile-bottom {
 
 		svg {
 			margin: 0 auto;
 			display: block;
+			width: 600px;
+			height: 300px;
 		}
 	}
 

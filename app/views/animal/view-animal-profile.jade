@@ -28,11 +28,11 @@ html(lang='en')
       block content
         div(class="profile-container")
           div(class="profile-top")
-            div(class="profile-left")
               div(class="profile-picture-container")
                 img(class="profile-picture" src="#{animal.picture_url}")
               span(class="name") #{animal.given_name}
-              div(class="profile-secondary")
+            div(class="profile-secondary")
+              div(class="profile-information")
                 h4 Information
                 div
                   span(class="category") ID: 
@@ -52,9 +52,9 @@ html(lang='en')
                 div
                   span(class="category") Exhibit: 
                   span(class="value") #{exhibit.name}
-            div(class="profile-description")
-              h4 Description
-              p #{species.description}
+              div(class="profile-description")
+                h4 Description
+                p #{species.description}
           div(class="profile-bottom")
             div(class="graph")
 
