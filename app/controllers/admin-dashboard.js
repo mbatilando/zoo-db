@@ -35,9 +35,10 @@ router.get('/api/:zooId', function (req, res, next) {
     .success(function (result) {
       result = result.map(function (elem) { elem.full_name = elem.first_name + ' ' + elem.last_name });
       zoo.children = _.uniq(result, 'full_name');
+      console.log(zoo);
       zoo.children = zoo.children.map(function (elem) {
         elem.children = [];
-        elem.name = elem.full_name
+        elem.name = elem.full_name;
       });
       res.json(zoo);
     })
