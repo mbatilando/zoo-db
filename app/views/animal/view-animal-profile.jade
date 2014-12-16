@@ -18,6 +18,8 @@ html(lang='en')
       script(src='/components/jquery/dist/jquery.min.js')
       script(src='/components/moment/moment.js')
       script(src='/components/jquery-ui/jquery-ui.js')
+      script(src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js')
+      script(src='/js/profile.js')
   body
     block header
       include ../header/header
@@ -31,11 +33,20 @@ html(lang='en')
               span(class="species") #{animal.species}
             div(class="profile-right")
               div
+                span(class="category") ID: 
+                span(id="animalId" class="value") #{animal.id}
+              div
                 span(class="category") Weight: 
                 span(class="value") #{animal.weight}
               div
                 span(class="category") Gender: 
                 span(class="value") #{animal.gender}
+              div
+                span(class="category") Exhibit: 
+                span(class="value") #{exhibit.name}
+            div(class="profile-middle")
+              h4 Description
+              p #{species.description}
           div(class="profile-bottom")
             div(class="graph")
 

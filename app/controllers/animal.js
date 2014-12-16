@@ -32,8 +32,13 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.get('/profile/:id', function (req, res, next) {
+  if (isNaN(req.params.id)) { return; };
   db['Animal'].find({ where: { id: req.params.id }}).success(function (animal) {
-    res.render('animal/view-animal-profile', { animal: animal, user: req.session.username});
+    db['Exhibit'].find({ where: { id: animal.ExhibitId }}).success(function (exhibit) {
+      db['Species'].find({ where: { id: animal.SpeciesId }}).success(function (species) {
+        res.render('animal/view-animal-profile', { exhibit: exhibit, species: species, animal: animal, user: req.session.username});
+      });
+    });
   });
 });
 

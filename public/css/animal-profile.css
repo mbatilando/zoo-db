@@ -1,0 +1,57 @@
+.profile-container {
+  width: 800px;
+  display: block;
+  margin: 50px auto;
+  background: #eee;
+}
+.profile-container .profile-top {
+  height: 200px;
+  overflow: auto;
+}
+.profile-container .profile-top .profile-left {
+  float: left;
+  min-width: 100px;
+  max-width: 200px;
+  display: inline-block;
+  font-size: 20px;
+  margin: 15px 0 0 50px;
+  text-align: center;
+}
+.profile-container .profile-top .name {
+  display: block;
+  font-weight: bold;
+}
+.profile-container .profile-top .species {
+  font-style: italic;
+}
+.profile-container .profile-top .species {
+  display: block;
+}
+.profile-container .profile-top .profile-picture {
+  width: 100px;
+  min-height: 135px;
+}
+.profile-container .profile-top .profile-right {
+  float: left;
+  margin: 30px 50px 0 0;
+  font-size: 16px;
+}
+.profile-container .profile-top .category {
+  font-weight: bold;
+}
+.profile-container .profile-bottom svg {
+  margin: 0 auto;
+  display: block;
+}
+.profile-container .profile-middle {
+  padding: 0 50px;
+  float: left;
+  width: 289px;
+  display: inline-block;
+  margin-top: 30px;
+}
+.profile-container .profile-middle h4 {
+  margin: 0;
+}
+
+/*# sourceMappingURL=animal-profile.css.map */

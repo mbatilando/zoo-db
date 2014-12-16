@@ -25,6 +25,23 @@ html, body {
 	float: left;
 }
 
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 14px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+
 .button-success,
 .button-error,
 .button-warning,

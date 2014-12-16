@@ -1,0 +1,69 @@
+.profile-container {
+	width: 800px;
+	display: block;
+	margin: 50px auto;
+	background: #eee;
+
+	.profile-top {
+		height: 200px;
+		overflow: auto;
+
+		.profile-left {
+			float: left;
+			min-width: 100px;
+			max-width: 200px;
+			display: inline-block;
+			font-size: 20px;
+			margin: 15px 0 0 50px;
+			text-align: center;
+		}
+
+		.name {
+			display: block;
+			font-weight: bold;
+		}
+
+		.species {
+			font-style: italic;
+		}
+
+		.species {
+			display: block;
+		}
+
+		.profile-picture {
+			width: 100px;
+			min-height: 135px;
+		}
+
+		.profile-right {
+			float: left;
+			margin: 30px 50px 0 0;
+			font-size: 16px;
+		}
+
+		.category {
+			font-weight: bold;
+		}
+	}
+
+	.profile-bottom {
+
+		svg {
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+	.profile-middle {
+		padding: 0 50px;
+		float: left;
+		width: 289px;
+		display: inline-block;
+		margin-top: 30px;
+
+		h4 {
+			margin: 0;
+		}
+	}
+}
