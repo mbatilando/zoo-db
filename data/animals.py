@@ -60,14 +60,18 @@ imgur_client = ImgurClient(imgur_client_id, imgur_client_secret)
 
 for exhibit_name in exhibit_species_data:
   exhibit_id = exhibit_map[exhibit_name]
-  for species_name in exhibit_species_data[exhibit_name]:
-    species_id = species_map[species_name]
-    print "\nFound species '%s' in exhibit '%s'." % (species_name, exhibit_name)
-    num_animals = int(raw_input(
-      "How many '%s' animals do you want to add? " % species_name))
-    for i in range(num_animals):
-      animal_info = get_animal_info(species_name, i + 1, key, imgur_client)
-      write_animal_info(animal_info)
-      print "Added %s the %s." % (animal_info[1], species_name)
-      key += 1
+  if (raw_input("\nDo you want to add animals to exhibit '%s' (y/n)? "
+      % exhibit_name) == "y"):
+    for species_name in exhibit_species_data[exhibit_name]:
+      species_id = species_map[species_name]
+      species_name = species_name.replace(u"\xe1", "a")
+      print ("\nFound species '%s' in exhibit '%s'."
+          % (species_name, exhibit_name))
+      num_animals = int(raw_input(
+        "How many '%s' animals do you want to add? " % species_name))
+      for i in range(num_animals):
+        animal_info = get_animal_info(species_name, i + 1, key, imgur_client)
+        write_animal_info(animal_info)
+        print "Added %s the %s." % (animal_info[1], species_name)
+        key += 1
 
