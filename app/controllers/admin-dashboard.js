@@ -33,6 +33,7 @@ router.get('/api/:zooId', function (req, res, next) {
   db.sequelize
     .query('SELECT "Zooes".name, "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name FROM "Zooes", "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zooes".id = ' + req.params.zooId + ' AND "Zooes".id = "Zookeepers"."ZooId" AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name;')
     .success(function (result) {
+      var origResult = result;
       result = result.map(function (elem) {
         elem.full_name = elem.first_name + ' ' + elem.last_name;
         return elem;
@@ -45,12 +46,13 @@ router.get('/api/:zooId', function (req, res, next) {
         // newElem.children = []; // Species
         // newElem.name = elem.full_name;
         elem.name = elem.full_name;
+        elem.children = [];
         return elem;
       });
-      // for (var i = 0, len = zoo.children.length; i < len; i++) {
-      //   zoo.children[i].children = _.where(result, { last_name: zoo.children[i].last_name });
-      //   console.log(zoo.children[i].children);
-      // }
+      for (var i = 0, len = zoo.children.length; i < len; i++) {
+        zoo.children[i].children = _.where(origResult, { last_name: zoo.children[i].last_name });
+        console.log(zoo.children[i].children);
+      }
 
       // for(i = 0, len = zoo.children)
       res.json(zoo);
