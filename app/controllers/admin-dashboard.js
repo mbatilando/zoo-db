@@ -25,6 +25,14 @@ router.get('/', function (req, res, next) {
   res.render('admin-dashboard/search', {});
 });
 
+router.get('/api/:zooId', function (req, res, next) {
+  db.sequelize
+    .query('SELECT "Zooes".name, "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name FROM "Zooes", "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zooes".id = ' + req.params.zooId + ' AND "Zooes".id = "Zookeepers"."ZooId" AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name;')
+    .success(function (result) {
+      res.json(result);
+    })
+});
+
 router.get('/:zooId', function (req, res, next) {
   // if (!authenticate(req)) return res.redirect('/authentication/login');
   var values = {};
