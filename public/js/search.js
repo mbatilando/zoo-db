@@ -13,4 +13,10 @@ $(document).ready(function () {
 			}
 		});
 	});
+
+	$('#view').click(function (event) {
+		event.preventDefault();
+		var zooId = $('#zoo').val();
+		window.location.href = '/admin/dashboard/' + zooId;
+	});
 });

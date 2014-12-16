@@ -21,6 +21,10 @@ function authenticate (req) {
   return true;
 }
 
+router.get('/', function (req, res, next) {
+  res.render('admin-dashboard/search', {});
+});
+
 router.get('/:zooId', function (req, res, next) {
   // if (!authenticate(req)) return res.redirect('/authentication/login');
   var values = {};
@@ -133,7 +137,7 @@ router.get('/:zooId', function (req, res, next) {
     function (callback) {
       db['Zoo'].find({where:{id:req.params.zooId}}).success(function (zoo) {
         values.zooName = zoo.name;
-        res.render('admin-dashboard/dashboard', { user: req.session.username, values: values });
+        res.render('admin-dashboard/zoo', { user: req.session.username, values: values });
       });
     }
   ]);
