@@ -127,9 +127,14 @@ router.get('/:zooId', function (req, res, next) {
             values.animalHighestWeight.common_name = result[0].common_name;
             values.animalHighestWeight.weight = result[0].weight;
             console.log(values);
-            res.render('admin-dashboard/dashboard', { user: req.session.username, values: values });
             callback();
           })
+    },
+    function (callback) {
+      db['Zoo'].find({where:{id:req.params.zooId}}).success(function (zoo) {
+        values.zooName = zoo.name;
+        res.render('admin-dashboard/dashboard', { user: req.session.username, values: values });
+      });
     }
   ]);
 });
