@@ -1,7 +1,8 @@
 var express = require('express'),
     router = express.Router(),
     db = require('../models'),
-    async = require('async');
+    async = require('async'),
+    _ = require('lodash');
 
 // function authenticate (req) {
 //   if (!req.session.username || !req.session.user_type) {
@@ -26,10 +27,19 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/api/:zooId', function (req, res, next) {
+  var zoo = {};
+  zoo.name = "Test Zoo";
+  zoo.children = []; // Zookeepers
   db.sequelize
     .query('SELECT "Zooes".name, "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name FROM "Zooes", "Zookeepers", "Exhibits", "Animals", "Species" WHERE "Zooes".id = ' + req.params.zooId + ' AND "Zooes".id = "Zookeepers"."ZooId" AND "Zookeepers".id = "Exhibits"."ZookeeperId" AND "Exhibits".id = "Animals"."ExhibitId" AND "Animals"."SpeciesId" = "Species".id ORDER BY "Zookeepers".first_name, "Zookeepers".last_name, "Exhibits".name, "Species".common_name, "Animals".given_name;')
     .success(function (result) {
-      res.json(result);
+      result = result.map(function (elem) { elem.full_name = elem.first_name + ' ' + elem.last_name });
+      zoo.children = _.uniq(result, 'full_name');
+      zoo.children = zoo.children.map(function (elem) {
+        elem.children = [];
+        elem.name = elem.full_name
+      });
+      res.json(zoo);
     })
 });
 
