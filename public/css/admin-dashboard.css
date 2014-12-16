@@ -1,0 +1,15 @@
+.information-container .section {
+  width: 21%;
+  display: inline-block;
+  padding: 0 2%;
+}
+.information-container .header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.information-container .information .info-category {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=admin-dashboard.css.map */
