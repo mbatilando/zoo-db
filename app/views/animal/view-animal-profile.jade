@@ -30,7 +30,6 @@ html(lang='en')
             div(class="profile-left")
               img(class="profile-picture" src="#{animal.picture_url}")
               span(class="name") #{animal.given_name}
-              span(class="species") #{animal.species}
             div(class="profile-right")
               div
                 span(class="category") ID: 
@@ -41,6 +40,12 @@ html(lang='en')
               div
                 span(class="category") Gender: 
                 span(class="value") #{animal.gender}
+              div
+                span(class="category") Scientific Name: 
+                span(class="value") #{species.scientific_name}
+              div
+                span(class="category") Common Name: 
+                span(class="value") #{species.common_name}
               div
                 span(class="category") Exhibit: 
                 span(class="value") #{exhibit.name}
